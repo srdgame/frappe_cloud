@@ -55,7 +55,7 @@ website_route_rules = [
 			"parents": [{"title": _("Cloud Companies"), "name": "cloud_companies"}]
 		}
 	},
-{"from_route": "/cloud_company_groups", "to_route": "Cloud Company Group"},
+	{"from_route": "/cloud_company_groups", "to_route": "Cloud Company Group"},
 	{"from_route": "/cloud_company_groups/<path:name>", "to_route": "cloud_company_group",
 		"defaults": {
 			"doctype": "Cloud Company Group",
