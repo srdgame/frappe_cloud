@@ -20,11 +20,11 @@ def get_permission_query_conditions(user):
 		user_ents='"' + '", "'.join(ent_list) + '"')
 
 
-def has_permission(doc, user):
-	if 'Repair Manager' in frappe.get_roles(user):
+def has_permission(doc, ptype, user):
+	if 'Cloud Manager' in frappe.get_roles(user):
 		return True
 
-	if frappe.get_value('Repair Enterprise', {'admin': user, 'name': doc.enterprise}):
+	if frappe.get_value('Cloud Company', {'admin': user, 'name': doc.company}):
 		return True
 
 	return False

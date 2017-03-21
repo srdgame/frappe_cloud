@@ -29,7 +29,7 @@ def get_permission_query_conditions(user):
 
 
 def has_permission(doc, ptype, user):
-	if frappe.has_permission("Cloud Company", doc=doc, ptype=ptype):
+	if 'Cloud Manager' in frappe.get_roles(user):
 		return True
 
 	return doc.admin == user
