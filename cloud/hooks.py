@@ -74,6 +74,16 @@ app_license = "MIT"
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
+permission_query_conditions = {
+	"Cloud Company": "cloud.cloud.doctype.cloud_company.cloud_company.get_permission_query_conditions",
+	"Cloud Company Group": "cloud.cloud.doctype.cloud_company_group.cloud_company_group.get_permission_query_conditions",
+}
+
+has_permission = {
+	"Cloud Company": "cloud.cloud.doctype.cloud_company.cloud_company.has_permission",
+	"Cloud Company Group": "cloud.cloud.doctype.cloud_company_group.cloud_company_group.has_permission",
+}
+
 # Document Events
 # ---------------
 # Hook on document methods and events
