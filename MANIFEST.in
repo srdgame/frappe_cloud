@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include cloud *.css
+recursive-include cloud *.csv
+recursive-include cloud *.html
+recursive-include cloud *.ico
+recursive-include cloud *.js
+recursive-include cloud *.json
+recursive-include cloud *.md
+recursive-include cloud *.png
+recursive-include cloud *.py
+recursive-include cloud *.svg
+recursive-include cloud *.txt
+recursive-exclude cloud *.pyc
