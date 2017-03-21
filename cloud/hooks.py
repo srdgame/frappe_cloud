@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from . import __version__ as app_version
+import frappe
+from frappe import _
 
 app_name = "cloud"
 app_title = "Cloud"
@@ -43,6 +45,31 @@ app_license = "MIT"
 
 # Website user home page (by function)
 # get_website_user_home_page = "cloud.utils.get_home_page"
+
+# Website Route Rules
+website_route_rules = [
+	{"from_route": "/cloud_companies", "to_route": "Cloud Company"},
+	{"from_route": "/cloud_companies/<path:name>", "to_route": "cloud_company",
+		"defaults": {
+			"doctype": "Cloud Company",
+			"parents": [{"title": _("Cloud Companies"), "name": "cloud_companies"}]
+		}
+	},
+{"from_route": "/cloud_company_groups", "to_route": "Cloud Company Group"},
+	{"from_route": "/cloud_company_groups/<path:name>", "to_route": "cloud_company_group",
+		"defaults": {
+			"doctype": "Cloud Company Group",
+			"parents": [{"title": _("Cloud Companies"), "name": "cloud_company_groups"}]
+		}
+	},
+]
+
+portal_menu_items = [
+	{"title": _("Cloud Companies"), "route": "/cloud_companies", "reference_doctype": "Cloud Company",
+		"role": "Cloud User"},
+	{"title": _("Cloud Company Groups"), "route": "/cloud_company_groups", "reference_doctype": "Cloud Company Group",
+		"role": "Cloud User"}
+]
 
 # Generators
 # ----------
