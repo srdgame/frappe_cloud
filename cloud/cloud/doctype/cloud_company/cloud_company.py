@@ -19,3 +19,17 @@ class CloudCompany(Document):
 	def on_trash(self):
 		user = frappe.get_doc('User', self.admin)
 		user.remove_roles('Cloud User')
+
+
+def get_permission_query_conditions(user):
+	if 'Cloud Manager' in frappe.get_roles(user):
+		return ""
+
+	return '''(`tabCloud Company`.admin = "{0}")'''.format(user)
+
+
+def has_permission(doc, ptype, user):
+	if frappe.has_permission("Cloud Company", doc=doc, ptype=ptype):
+		return True
+
+	return doc.admin == user
