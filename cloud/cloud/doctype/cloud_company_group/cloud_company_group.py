@@ -16,7 +16,7 @@ def get_permission_query_conditions(user):
 
 	ent_list = [d[0] for d in frappe.db.get_values("Cloud Company", {"admin": user}, "name")]
 
-	return """(`tabCloud Company Group`.comany in ({user_ents}))""".format(
+	return """(`tabCloud Company Group`.company in ({user_ents}))""".format(
 		user_ents='"' + '", "'.join(ent_list) + '"')
 
 
