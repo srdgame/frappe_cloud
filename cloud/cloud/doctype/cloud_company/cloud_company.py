@@ -74,7 +74,7 @@ def list_groups(company):
 
 
 def list_groups_obj(company):
-	return frappe.get_all('Cloud Company Group', filters={"company": company})
+	return frappe.get_all('Cloud Company Group', filters={"company": company}, fields=["name", "group_name", "enabled", "modified"])
 
 
 def get_domain(company):
