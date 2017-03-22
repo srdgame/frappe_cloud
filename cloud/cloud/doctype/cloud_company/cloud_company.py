@@ -69,6 +69,14 @@ def list_users(company):
 	return users
 
 
+def list_groups(company):
+	return [d[0] for d in frappe.db.get_values("Cloud Company Group", {"company": company})]
+
+
+def list_groups_obj(company):
+	return frappe.get_all('Cloud Company Group', filters={"company": company})
+
+
 def get_domain(company):
 	return frappe.get_value("Cloud Company", company, "domain")
 
