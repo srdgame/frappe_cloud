@@ -33,3 +33,9 @@ def has_permission(doc, ptype, user):
 		return True
 
 	return doc.admin == user
+
+
+def list_admin_companies(user):
+	if 'Cloud User' not in frappe.get_roles(user):
+		return []
+	return [d[0] for d in frappe.db.get_values("Cloud Company", {"admin": user}, "name")]

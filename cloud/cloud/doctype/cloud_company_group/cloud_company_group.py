@@ -28,3 +28,7 @@ def has_permission(doc, ptype, user):
 		return True
 
 	return False
+
+
+def list_user_groups(user):
+	return frappe.db.get_values("Cloud Company GroupUser", {"user": user}, ["parent", "group", "role"])
