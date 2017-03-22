@@ -5,7 +5,7 @@ frappe.ui.form.on('Cloud Company Group', {
 	setup: function(frm) {
 		frm.fields_dict.user_list.grid.get_field('user').get_query  = function(){
 			return {
-				filters: {"ignore_user_type": 1}
+				filters: {"company": frm.doc.company}
 			};
 		};
 	},

@@ -7,4 +7,10 @@ import frappe
 from frappe.model.document import Document
 
 class CloudSettings(Document):
-	pass
+	@staticmethod
+	def get_default_company():
+		return frappe.db.get_single_value("Cloud Settings", "default_cloud_company")
+
+	@staticmethod
+	def get_default_wechat_app():
+		return frappe.db.get_single_value("Cloud Settings", "default_wechat_app")

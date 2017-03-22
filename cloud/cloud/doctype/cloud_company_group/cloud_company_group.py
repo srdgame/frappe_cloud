@@ -5,6 +5,7 @@
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
+from cloud.cloud.doctype.cloud_company.cloud_company import list_admin_companies
 
 class CloudCompanyGroup(Document):
 	pass
@@ -31,4 +32,19 @@ def has_permission(doc, ptype, user):
 
 
 def list_user_groups(user):
-	return frappe.db.get_values("Cloud Company GroupUser", {"user": user}, ["parent", "group", "role"])
+	groups = []
+	for d in frappe.db.get_values("Cloud Company GroupUser", {"user": user}, ["parent", "role"]):
+		groups.append({"group": d.parent, "role": d.role})
+	for comp in list_admin_companies(user):
+		for d in frappe.db.get_values("Cloud Company Group", {"company": comp}, "name"):
+			groups.append({"group": d[0], "role": "admin"})
+
+	return groups
+
+
+def list_users(group):
+	return frappe.db.get_values("Cloud Company GroupUser", {"parent": group}, ["user", "role"]);
+
+
+def get_company(group):
+	return frappe.db.get_value("Cloud Company Group", group, "company")
