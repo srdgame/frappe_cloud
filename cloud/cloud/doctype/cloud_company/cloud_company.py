@@ -51,9 +51,9 @@ def list_user_companies(user):
 	clist = []
 	for d in frappe.db.get_values("Cloud Company", {"admin": user, "enabled": 1}, "name"):
 		clist.append(d[0])
-	for d in frappe.db.get_values("Cloud Employee", {"user": user}, "company"):
-		if frappe.db.get_value("Cloud Company", d[0], "enabled") == 1:
-			clist.append(d[0])
+	comp = frappe.db.get_value("Cloud Employee", {"user": user}, "company")
+	if frappe.db.get_value("Cloud Company", comp, "enabled") == 1:
+		clist.append(d[0])
 
 	return clist
 

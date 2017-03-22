@@ -12,15 +12,19 @@ class CloudEmployee(Document):
 
 
 def add_employee(user, company):
-	if frappe.get_value("Cloud Employee", {"company": company, "user": user}):
+	comp = frappe.get_value("Cloud Employee", {"user": user}, "company")
+	if comp:
+		if comp != company:
+			throw(_("User in in another company {0}").format(comp))
 		return True
+
 	if not frappe.get_value("Cloud Company", {"name": company, "admin": frappe.session.user}):
 		throw(_("You not the admin of company {0}").format(company))
 
 	doc = frappe.get_doc({
-		        "doctype": "Cloud Employee",
-		        "user": user,
-		        "login_name": "iMbEhIDE"  # login_name
+		"doctype": "Cloud Employee",
+		"user": user,
+		"company": company
 	})
 	doc.insert(ignore_permissions=True)
 	frappe.db.commit()
