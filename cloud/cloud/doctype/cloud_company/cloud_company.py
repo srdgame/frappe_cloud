@@ -11,13 +11,18 @@ class CloudCompany(Document):
 	def on_update(self):
 		org_admin = frappe.db.get_value("Cloud Company", {"name": self.name}, "admin")
 		if org_admin != self.admin:
-			user = frappe.get_doc('User', org_admin)
-			user.remove_roles('Cloud User')
-		user = frappe.get_doc('User', self.admin)
-		user.add_roles('Cloud User')
+			self.run_method("on_admin_remove", user=org_admin)
+		self.run_method("on_admin_insert", user=self.admin)
 
 	def on_trash(self):
-		user = frappe.get_doc('User', self.admin)
+		self.run_method("on_admin_remove", user=self.admin)
+
+	def on_admin_insert(self, user):
+		user = frappe.get_doc('User', user)
+		user.add_roles('Cloud User')
+
+	def on_admin_remove(self, user):
+		user = frappe.get_doc('User', user)
 		user.remove_roles('Cloud User')
 
 
