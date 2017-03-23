@@ -31,7 +31,6 @@ def get_context(context):
 
 	if is_admin:
 		doc.users = get_users(doc.name, start=0, search=frappe.form_dict.get("search"))
-	doc.bunch_codes = get_bunch_codes(doc.name, start=0, search=frappe.form_dict.get("search"))
 
 	context.parents = [{"label": doc.parent, "route": "/cloud_companies/" + doc.company}]
 	context.doc = doc
@@ -48,34 +47,7 @@ def get_users(group, start=0, search=None):
 	if search:
 		filters["user"] = ("like", "%{0}%".format(search))
 
-	user_names = frappe.get_all("Cloud Company GroupUser", filters=filters,
-		fields=["user"],
+	return frappe.get_all("Cloud Company GroupUser", filters=filters,
+		fields=["user", "role", "modified", "creation"],
 		limit_start=start, limit_page_length=10)
-
-	users = []
-	for user in user_names:
-		u = frappe.get_value("Cloud Employee", user.user, ["user", "modified", "creation"])
-		users.append({
-			"name": u[0],
-			"modified": u[1],
-			"creation": u[2]
-		})
-
-	return users
-
-
-def get_bunch_codes(group, start=0, search=None):
-	filters = {
-		"owner_type": "Cloud Company Group",
-		"owner_id": group
-	}
-	if search:
-		filters["bunch_name"] = ("like", "%{0}%".format(search))
-
-	bunch_codes = frappe.get_all("Cloud Device Bunch", filters=filters,
-		fields=["name", "bunch_name", "code", "modified", "creation"],
-		limit_start=start, limit_page_length=10)
-
-
-	return bunch_codes
 
