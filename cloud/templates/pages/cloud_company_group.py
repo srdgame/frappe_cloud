@@ -18,10 +18,6 @@ def get_context(context):
 		frappe.local.flags.redirect_location = "/me"
 		raise frappe.Redirect
 
-	user_roles = frappe.get_roles(frappe.session.user)
-	if 'Cloud User' not in user_roles or frappe.session.user == 'Guest':
-		raise frappe.PermissionError
-
 	context.no_cache = 1
 	context.show_sidebar = True
 	doc = frappe.get_doc('Cloud Company Group', name)
