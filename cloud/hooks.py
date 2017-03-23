@@ -60,12 +60,16 @@ website_route_rules = [
 			"parents": [{"title": _("Cloud Companies"), "name": "cloud_company_groups"}]
 		}
 	},
+	{"from_route": "/cloud_employees/<path:name>", "to_route": "cloud_employee",
+		"defaults": {
+			"doctype": "Cloud Employee",
+			"parents": [{"title": _("Cloud Employees"), "name": "cloud_employees"}]
+		}
+	},
 ]
 
 portal_menu_items = [
 	{"title": _("Cloud Companies"), "route": "/cloud_companies", "reference_doctype": "Cloud Company",
-		"role": "Cloud User"},
-	{"title": _("Cloud Employees"), "route": "/cloud_employees", "reference_doctype": "Cloud Employee",
 		"role": "Cloud User"}
 ]
 
