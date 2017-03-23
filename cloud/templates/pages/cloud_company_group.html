@@ -44,6 +44,8 @@
 	</div>
 </div>
 
+{% block page_group_header %}
+{% endblock %}
 
 {% if is_admin %}
 <div class='padding'></div>
@@ -66,6 +68,8 @@
 <div class='padding'></div>
 {% endif %} <!-- if is_admin -->
 
+{% block page_group_footer %}
+{% endblock %}
 
 <script>
 	{% include "templates/pages/cloud_company_group.js" %}
