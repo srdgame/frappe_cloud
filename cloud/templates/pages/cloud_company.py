@@ -21,7 +21,6 @@ def get_context(context):
 		frappe.local.flags.redirect_location = "/me"
 		raise frappe.Redirect
 
-
 	context.no_cache = 1
 	context.show_sidebar = True
 	#context.no_breadcrumbs = True
