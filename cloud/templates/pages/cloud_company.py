@@ -11,6 +11,8 @@ from cloud.cloud.doctype.cloud_company.cloud_company import list_groups_obj
 
 def get_context(context):
 	name = frappe.form_dict.company or frappe.form_dict.name
+	context.group_hack_url = frappe.form_dict.group_hack_url
+	context.user_hack_url = frappe.form_dict.user_hack_url
 
 	if not name:
 		name = frappe.get_value("Cloud Employee", frappe.session.user, "company")
