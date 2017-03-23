@@ -1,6 +1,6 @@
 {% for user in doc.users %}
 	<div class='user'>
-		<a class="no-decoration user-link {{ user.css_seen }}" href="/cloud_employees/{{ user.name }}">
+		<a class="no-decoration user-link {{ user.css_seen }}" href="/cloud_employees/{{ user.name or user.user }}">
 		<div class='row user-item'>
 			<div class='col-xs-4'>
 				<span class="indicator {{ "green" if user.enabled or user.user else "darkgrey" }}" title="{{ user.enabled }}"  > {{ user.name or user.user }}</span>
