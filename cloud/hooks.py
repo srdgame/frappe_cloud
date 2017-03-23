@@ -64,6 +64,8 @@ website_route_rules = [
 
 portal_menu_items = [
 	{"title": _("Cloud Companies"), "route": "/cloud_companies", "reference_doctype": "Cloud Company",
+		"role": "Cloud User"},
+	{"title": _("Cloud Employees"), "route": "/cloud_employees", "reference_doctype": "Cloud Employee",
 		"role": "Cloud User"}
 ]
 
