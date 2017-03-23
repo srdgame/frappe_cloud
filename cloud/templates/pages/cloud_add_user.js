@@ -1,5 +1,5 @@
 frappe.ready(function() {
-	$(".btn-iot-add-user").click(function() {
+	$(".btn-cloud-add-user").click(function() {
 		var args = {
 			enable: $("#enable").val(),
 			company: $("#company").val(),
@@ -13,8 +13,8 @@ frappe.ready(function() {
 
 		frappe.call({
 			type: "POST",
-			method: "iot.iot.doctype.iot_user.iot_user.add_user",
-			btn: $(".btn-iot-add-user"),
+			method: "cloud.cloud.doctype.cloud_employee.cloud_employee.add_user",
+			btn: $(".btn-cloud-add-user"),
 			args: args,
 			callback: function(r) {
 				if(!r.exc) {
@@ -26,7 +26,7 @@ frappe.ready(function() {
 					if(r.message) {
 						frappe.msgprint(r.message);
 						setTimeout(function() {
-							window.location.href = "/iot_users/"+args.user;
+							window.location.href = "/cloud_employees/"+args.user;
 						}, 2000);
 					}
 				} else {
@@ -39,5 +39,5 @@ frappe.ready(function() {
         return false;
 	});
 
-	window.strength_message = $('.iot-add-user-strength-message');
+	window.strength_message = $('.cloud-add-user-strength-message');
 });

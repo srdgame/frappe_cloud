@@ -9,7 +9,7 @@ from cloud.cloud.doctype.cloud_company.cloud_company import list_users, get_doma
 from cloud.cloud.doctype.cloud_employee.cloud_employee import add_employee
 
 def is_company_admin(user, company):
-	return frappe.db.get_value("IOT Enterprise", {"name": company, "admin": user}, "admin")
+	return frappe.db.get_value("Cloud Company", {"name": company, "admin": user}, "admin")
 
 
 def list_users_by_domain(domain):
@@ -33,13 +33,13 @@ def get_context(context):
 	user = frappe.session.user
 
 	if not company:
-		raise frappe.ValidationError(_("You need specified IOT Enterprise"))
+		raise frappe.ValidationError(_("You need specified Cloud Enterprise"))
 
 	user_roles = frappe.get_roles(frappe.session.user)
-	if 'IOT User' not in user_roles or frappe.session.user == 'Guest':
-		raise frappe.PermissionError("Your account is not an IOT User!")
+	if 'Cloud User' not in user_roles or frappe.session.user == 'Guest':
+		raise frappe.PermissionError("Your account is not an Cloud User!")
 
-	if not (is_company_admin(user, company) or 'IOT Manager' in user_roles):
+	if not (is_company_admin(user, company) or 'Cloud User' in user_roles):
 		raise frappe.PermissionError
 
 	context.no_cache = 1
@@ -47,7 +47,7 @@ def get_context(context):
 
 	possible_users = list_possible_users(company)
 
-	context.parents = [{"label": company, "route": "/iot_companies/" + company}]
+	context.parents = [{"label": company, "route": "/cloud_companies/" + company}]
 	context.doc = {
 		"company": company,
 		"possible_users": possible_users

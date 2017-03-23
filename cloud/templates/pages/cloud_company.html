@@ -2,11 +2,11 @@
 
 {% block title %}{{ doc.comp_name }}{% endblock %}
 
-{% block header %} <h1>{{ _("IOT Companies") }}</h1> {% endblock %}
+{% block header %} <h1>{{ _("Cloud Companies") }}</h1> {% endblock %}
 
 {% block style %}
 	<style>
-		{% include "templates/includes/iot_company.css" %}
+		{% include "templates/includes/cloud_company.css" %}
 	</style>
 {% endblock %}
 
@@ -14,16 +14,16 @@
 {% block page_content %}
 
 <!-- no-cache -->
-<div class="row iot-company-info hidden-xs" style="min-height: 200px; padding-bottom: 50px;">
+<div class="row cloud-company-info hidden-xs" style="min-height: 200px; padding-bottom: 50px;">
 	<div class="col-sm-4">
 		<span class="user-image-myaccount"></span>
 		{% if is_admin %}
 		<div>
 			<ul class="list-unstyled">
-				<li><a href="/update-iot-company?name={{ doc.name }}">
+				<li><a href="/update-cloud-company?name={{ doc.name }}">
 					<h6 class="text-muted">{{ _("Edit") }}</h6>
 				</a></li>
-					<li><a href="/update-iot-employee-group?name={{ doc.name }}">
+					<li><a href="/update-cloud-employee-group?name={{ doc.name }}">
 					<h6 class="text-muted">{{ _("Edit Employee Groups") }}</h6>
 				</a></li>
 
@@ -52,13 +52,13 @@
 	<div class="clearfix">
 	  <h4 style="float: left;">{{ _("Groups") }}</h4>
 {% if is_admin %}
-	  <a class="btn btn-secondary btn-default btn-sm" style="float: right; position: relative; top: 10px;" href='/update-iot-employee-group?name={{ doc.name }}'>{{ _("New group") }}</a>
+	  <a class="btn btn-secondary btn-default btn-sm" style="float: right; position: relative; top: 10px;" href='/update-cloud-employee-group?name={{ doc.name }}'>{{ _("New group") }}</a>
 {% endif %}
 
 	</div>
 	<div class='company-group-section'>
 		<div class='company-group'>
-		{% include "templates/includes/iot_companies/iot_company_groups.html" %}
+		{% include "templates/includes/cloud_companies/groups.html" %}
 		</div>
 		<p><a id= 'more-groups' style='display: none;' class='more-groups small underline'>{{ _("More") }}</a><p>
 	</div>
@@ -72,13 +72,13 @@
 
 <div class="clearfix">
   <h4 style="float: left;">{{ _("Users") }}</h4>
-  <a class="btn btn-secondary btn-default btn-sm" style="float: right; position: relative; top: 10px;" href='/iot_add_user?company={{ doc.name }}'>{{ _("New user") }}</a>
+  <a class="btn btn-secondary btn-default btn-sm" style="float: right; position: relative; top: 10px;" href='/cloud_add_user?company={{ doc.name }}'>{{ _("New user") }}</a>
 </div>
 
 {% if doc.users %}
 	<div class='company-user-section'>
 		<div class='company-user'>
-		{% include "templates/includes/iot_companies/iot_company_users.html" %}
+		{% include "templates/includes/cloud_companies/users.html" %}
 		</div>
 		<p><a id= 'more-users' style='display: none;' class='more-users small underline'>{{ _("More") }}</a><p>
 	</div>
@@ -91,7 +91,7 @@
 {% endif %} <!-- is_admin -->
 
 <script>
-	{% include "templates/pages/iot_company.js" %}
+	{% include "templates/pages/cloud_company.js" %}
 </script>
 
 {% endblock %}

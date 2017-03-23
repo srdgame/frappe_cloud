@@ -20,7 +20,7 @@ def get_context(context):
 		raise frappe.Redirect
 
 	user_roles = frappe.get_roles(frappe.session.user)
-	if 'IOT User' not in user_roles or frappe.session.user == 'Guest':
+	if 'Cloud User' not in user_roles or frappe.session.user == 'Guest':
 		raise frappe.PermissionError
 
 	context.no_cache = 1
@@ -44,7 +44,7 @@ def get_context(context):
 	"""
 	context.parents = [
 		{"label": _("Back"), "route": frappe.get_request_header("referer")},
-		{"label": _("IOT Companies"), "route": "/iot_companies"}
+		{"label": _("Cloud Companies"), "route": "/cloud_companies"}
 	]
 	"""
 

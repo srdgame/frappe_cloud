@@ -1,6 +1,6 @@
 <div class="web-list-item">
 	<!--
-	<a class="no-decoration" href="/iot_companies/{{ doc.name }}">
+	<a class="no-decoration" href="/cloud_companies/{{ doc.name }}">
 		<div class="row">
 			<div class="col-xs-5">
 				{{ doc.name }}
@@ -19,13 +19,13 @@
 	</a>
 	-->
 	<div class='company'>
-		<a class="no-decoration company-link {{ doc.css_seen }}" href="/iot_companies/{{ doc.name }}">
+		<a class="no-decoration company-link {{ doc.css_seen }}" href="/cloud_companies/{{ doc.name }}">
 			<div class='row company-item'>
 				<div class='col-xs-4'>
 					<span class="indicator {{ "green" if doc.enabled else "darkgrey" }}" title="{{ doc.enabled }}"  > {{ doc.comp_name }}</span>
 						<div class="small text-muted item-timestamp"
 							title="{{ frappe.utils.pretty_date(doc.creation) }}">
-							created {{ frappe.utils.pretty_date(doc.creation) }}
+							{{ _("Created") }} {{ frappe.utils.pretty_date(doc.creation) }}
 						</div>
 				</div>
 				<div class='col-xs-6'>

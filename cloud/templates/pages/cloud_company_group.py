@@ -19,7 +19,7 @@ def get_context(context):
 		raise frappe.Redirect
 
 	user_roles = frappe.get_roles(frappe.session.user)
-	if 'IOT User' not in user_roles or frappe.session.user == 'Guest':
+	if 'Cloud User' not in user_roles or frappe.session.user == 'Guest':
 		raise frappe.PermissionError
 
 	context.no_cache = 1
@@ -33,12 +33,12 @@ def get_context(context):
 		doc.users = get_users(doc.name, start=0, search=frappe.form_dict.get("search"))
 	doc.bunch_codes = get_bunch_codes(doc.name, start=0, search=frappe.form_dict.get("search"))
 
-	context.parents = [{"label": doc.parent, "route": "/iot_companies/" + doc.company}]
+	context.parents = [{"label": doc.parent, "route": "/cloud_companies/" + doc.company}]
 	context.doc = doc
 	"""
 	context.parents = [
 		{"label": _("Back"), "route": frappe.get_request_header("referer")},
-		{"label": doc.parent, "route": "/iot_companies/" + doc.parent}
+		{"label": doc.parent, "route": "/cloud_companies/" + doc.parent}
 	]
 	"""
 
@@ -72,7 +72,7 @@ def get_bunch_codes(group, start=0, search=None):
 	if search:
 		filters["bunch_name"] = ("like", "%{0}%".format(search))
 
-	bunch_codes = frappe.get_all("IOT Device Bunch", filters=filters,
+	bunch_codes = frappe.get_all("Cloud Device Bunch", filters=filters,
 		fields=["name", "bunch_name", "code", "modified", "creation"],
 		limit_start=start, limit_page_length=10)
 
