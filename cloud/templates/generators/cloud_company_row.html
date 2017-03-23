@@ -24,8 +24,8 @@
 				<div class='col-xs-4'>
 					<span class="indicator {{ "green" if doc.enabled else "darkgrey" }}" title="{{ doc.enabled }}"  > {{ doc.comp_name }}</span>
 						<div class="small text-muted item-timestamp"
-							title="{{ frappe.utils.pretty_date(doc.modified) }}">
-							modified {{ frappe.utils.pretty_date(doc.modified) }}
+							title="{{ frappe.utils.pretty_date(doc.creation) }}">
+							created {{ frappe.utils.pretty_date(doc.creation) }}
 						</div>
 				</div>
 				<div class='col-xs-6'>
