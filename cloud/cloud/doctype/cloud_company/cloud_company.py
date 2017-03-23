@@ -4,6 +4,7 @@
 
 from __future__ import unicode_literals
 import frappe
+from frappe import throw, _
 from frappe.model.document import Document
 from cloud.cloud.doctype.cloud_settings.cloud_settings import CloudSettings
 
@@ -26,6 +27,30 @@ class CloudCompany(Document):
 		user = frappe.get_doc('User', user)
 		user.remove_roles('Cloud User')
 
+
+def get_company_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by="modified desc"):
+	return frappe.db.sql('''select *
+		from `tabCloud Company`
+		where
+			admin = %(user)s
+			order by %(order_by)s
+			limit {0}, {1}
+		'''.format(limit_start, limit_page_length),
+			{'user':frappe.session.user, 'order_by': order_by},
+			as_dict=True,
+			update={'doctype':'Cloud Company'})
+
+
+def get_list_context(context=None):
+	return {
+		"show_sidebar": True,
+		"show_search": True,
+		"no_breadcrumbs": True,
+		"title": _("Your Companies"),
+		#"introduction": _('The Cloud Companies those you can manage!'),
+		"get_list": get_company_list,
+		"row_template": "templates/generators/cloud_company_row.html",
+	}
 
 def get_permission_query_conditions(user):
 	if 'Cloud Manager' in frappe.get_roles(user):
