@@ -35,7 +35,7 @@ def get_context(context):
 		context.is_admin = True
 		company.groups = groups
 	else:
-		user_groups = [d.group for d in list_user_groups(frappe.session.user)]
+		user_groups = [d.name for d in list_user_groups(frappe.session.user)]
 		company.groups = [g for g in groups if g.name in user_groups]
 
 	context.doc = company
