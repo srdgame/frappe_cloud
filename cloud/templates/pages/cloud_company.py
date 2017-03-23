@@ -35,7 +35,7 @@ def get_context(context):
 	if company.get('admin') == frappe.session.user:
 		company.users = get_users(company.name, start=0, search=frappe.form_dict.get("search"))
 		context.is_admin = True
-		context.groups = groups
+		company.groups = groups
 	else:
 		user_groups = [d.group for d in list_user_groups(frappe.session.user)]
 		company.groups = [g for g in groups if g.name in user_groups]
