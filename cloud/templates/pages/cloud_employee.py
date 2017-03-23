@@ -27,7 +27,7 @@ def get_context(context):
 	context.no_cache = 1
 	context.show_sidebar = True
 	# Get target user document object
-	doc = frappe.get_doc('IOT User', name)
+	doc = frappe.get_doc('Cloud Employee', name)
 	# Check for Company permission
 	if not is_company_admin(frappe.session.user, doc.get("company")):
 		raise frappe.PermissionError("Your account is not company admin!")
