@@ -35,9 +35,10 @@ def has_permission(doc, ptype, user):
 def list_user_groups(user):
 	groups = []
 	for d in frappe.db.get_values("Cloud Company GroupUser", {"user": user}, ["parent", "role", "modified", "creation"]):
-		groups.append(_dict({"name": d[0], "role": d[1], "modified": d[2], "creation": d[3], "user": user}))
+		if frappe.get_value("Cloud Company Group", d[0], "enabled"):
+			groups.append(_dict({"name": d[0], "role": d[1], "modified": d[2], "creation": d[3], "user": user}))
 	for comp in list_admin_companies(user):
-		for d in frappe.db.get_values("Cloud Company Group", {"company": comp}, "name"):
+		for d in frappe.db.get_values("Cloud Company Group", {"company": comp, "enabled": 1}, "name"):
 			groups.append(_dict({"group": d[0], "role": "admin", "user": user}))
 
 	return groups
