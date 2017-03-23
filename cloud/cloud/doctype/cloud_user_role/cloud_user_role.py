@@ -7,4 +7,6 @@ import frappe
 from frappe.model.document import Document
 
 class CloudUserRole(Document):
-	pass
+	def list_perms(self):
+		return self.get("perm_list")
+
