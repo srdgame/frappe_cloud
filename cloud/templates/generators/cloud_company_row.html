@@ -21,12 +21,15 @@
 	<div class='company'>
 		<a class="no-decoration company-link {{ doc.css_seen }}" href="/iot_companies/{{ doc.name }}">
 			<div class='row company-item'>
-				<div class='col-xs-6'>
-					<span class="indicator {{ "green" if doc.enabled else "darkgrey" }}" title="{{ doc.enabled }}"  > {{ doc.ent_name }}</span>
+				<div class='col-xs-4'>
+					<span class="indicator {{ "green" if doc.enabled else "darkgrey" }}" title="{{ doc.enabled }}"  > {{ doc.comp_name }}</span>
 						<div class="small text-muted item-timestamp"
 							title="{{ frappe.utils.pretty_date(doc.modified) }}">
 							modified {{ frappe.utils.pretty_date(doc.modified) }}
 						</div>
+				</div>
+				<div class='col-xs-6'>
+					 {{ doc.full_name or doc.comp_name }}
 				</div>
 				<div class='col-xs-2'>
 					 {{ doc.domain }}
