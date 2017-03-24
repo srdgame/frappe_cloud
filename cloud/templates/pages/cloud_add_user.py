@@ -30,6 +30,8 @@ def get_context(context):
 	company = frappe.form_dict.company
 	if frappe.form_dict.user:
 		add_employee(frappe.form_dict.user, company)
+		frappe.local.flags.redirect_location = "/cloud_add_user?company=" + company
+		raise frappe.Redirect
 
 	user = frappe.session.user
 
