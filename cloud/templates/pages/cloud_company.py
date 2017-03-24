@@ -52,7 +52,7 @@ def get_users(company, start=0, search=None):
 		filters["user"] = ("like", "%{0}%".format(search))
 
 	users = frappe.get_all("Cloud Employee", filters=filters,
-		fields=["name", "enabled", "modified", "creation"],
+		fields=["name", "company", "modified", "creation"],
 		limit_start=start, limit_page_length=10)
 
 	return users
