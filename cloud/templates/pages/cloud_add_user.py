@@ -47,7 +47,7 @@ def get_context(context):
 
 	possible_users = list_possible_users(company)
 
-	context.parents = [{"label": company, "route": "/cloud_companies/" + company}]
+	context.parents = [{"title": company, "route": "/cloud_companies/" + company}]
 	context.doc = {
 		"company": company,
 		"possible_users": possible_users

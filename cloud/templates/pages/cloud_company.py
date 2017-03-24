@@ -41,8 +41,8 @@ def get_context(context):
 	context.doc = company
 	"""
 	context.parents = [
-		{"label": _("Back"), "route": frappe.get_request_header("referer")},
-		{"label": _("Cloud Companies"), "route": "/cloud_companies"}
+		{"title": _("Back"), "route": frappe.get_request_header("referer")},
+		{"title": _("Cloud Companies"), "route": "/cloud_companies"}
 	]
 	"""
 
