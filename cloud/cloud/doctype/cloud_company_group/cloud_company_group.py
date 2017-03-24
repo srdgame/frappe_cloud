@@ -8,6 +8,7 @@ from frappe import _dict
 from frappe.model.document import Document
 from cloud.cloud.doctype.cloud_company.cloud_company import list_admin_companies
 
+
 class CloudCompanyGroup(Document):
 	pass
 
@@ -16,7 +17,7 @@ def get_permission_query_conditions(user):
 	if 'Cloud Manager' in frappe.get_roles(user):
 		return ""
 
-	ent_list = [d[0] for d in frappe.db.get_values("Cloud Company", {"admin": user}, "name")]
+	ent_list = list_admin_companies(user)
 
 	return """(`tabCloud Company Group`.company in ({user_ents}))""".format(
 		user_ents='"' + '", "'.join(ent_list) + '"')
