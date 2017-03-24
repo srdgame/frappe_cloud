@@ -84,12 +84,7 @@ def list_users(company):
 	if frappe.db.get_value("Cloud Company", company, "enabled") != 1:
 		return
 
-	users = []
-	for d in frappe.db.get_values("Cloud Company Group", {"company":company}, "name"):
-		for d in frappe.db.get_values("Cloud Company GroupUser", {"parent": d[0]}, "user"):
-			users.append(d[0])
-
-	return users
+	return [d[0] for d in frappe.db.get_values("Cloud Employee", {"company": company})]
 
 
 def list_groups(company):
