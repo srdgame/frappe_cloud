@@ -11,6 +11,7 @@ class CloudEmployee(Document):
 	pass
 
 
+@frappe.whitelist()
 def add_employee(user, company):
 	comp = frappe.get_value("Cloud Employee", {"user": user}, "company")
 	if comp:
@@ -32,6 +33,7 @@ def add_employee(user, company):
 	return _("Employee has ben added")
 
 
+@frappe.whitelist()
 def delete_employee(user, company):
 	if not frappe.get_value("Cloud Company", {"name": company, "admin": frappe.session.user}):
 		throw(_("You not the admin of company {0}").format(company))
