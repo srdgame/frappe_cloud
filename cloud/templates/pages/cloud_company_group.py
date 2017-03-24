@@ -29,7 +29,7 @@ def get_context(context):
 		doc.users = get_users(doc.name, start=0, search=frappe.form_dict.get("search"))
 
 	context.is_admin = is_admin
-	context.parents = [{"label": doc.parent, "route": "/cloud_companies/" + doc.company}]
+	context.parents = [{"label": doc.group_name, "route": "/cloud_companies/" + doc.company}]
 	context.doc = doc
 	"""
 	context.parents = [
