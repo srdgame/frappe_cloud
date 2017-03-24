@@ -55,8 +55,5 @@ def has_permission(doc, ptype, user):
 
 	prj_list = list_admin_projects(user)
 
-	if frappe.get_value('Cloud Project Site', {"project": ["in", prj_list]}):
-		return True
-
-	return False
+	return doc.project in prj_list
 
