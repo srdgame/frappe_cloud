@@ -20,12 +20,10 @@ class CloudCompany(Document):
 		self.run_method("on_admin_remove", user=self.admin)
 
 	def on_admin_insert(self, user):
-		user = frappe.get_doc('User', user)
-		user.add_roles('Cloud User')
+		frappe.get_doc('User', user).add_roles('Cloud User')
 
 	def on_admin_remove(self, user):
-		user = frappe.get_doc('User', user)
-		user.remove_roles('Cloud User')
+		frappe.get_doc('User', user).remove_roles('Cloud User')
 
 
 def get_company_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by="modified desc"):
