@@ -1,5 +1,5 @@
 frappe.ready(function() {
-	$(".btn-iot-delete-user").click(function() {
+	$(".btn-cloud-delete-user").click(function() {
 		var args = {
 			company: $("#company").val(),
 			user: $("#user").val(),
@@ -12,7 +12,7 @@ frappe.ready(function() {
 
 		frappe.call({
 			type: "POST",
-			method: "iot.iot.doctype.iot_user.iot_user.delete_user",
+			method: "cloud.cloud.doctype.cloud_employee.cloud_employee.delete_employee",
 			btn: $(".btn-iot-delete-user"),
 			args: args,
 			callback: function(r) {

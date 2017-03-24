@@ -30,3 +30,13 @@ def add_employee(user, company):
 	frappe.db.commit()
 
 	return _("Employee has ben added")
+
+
+def delete_employee(user, company):
+	if not frappe.get_value("Cloud Company", {"name": company, "admin": frappe.session.user}):
+		throw(_("You not the admin of company {0}").format(company))
+
+	frappe.delete_doc("Cloud Employee", user, ignore_permissions=True)
+
+	return _("Employee has been deleted")
+
