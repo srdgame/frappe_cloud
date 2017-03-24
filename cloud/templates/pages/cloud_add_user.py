@@ -8,6 +8,7 @@ from frappe import _
 from cloud.cloud.doctype.cloud_company.cloud_company import list_users, get_domain
 from cloud.cloud.doctype.cloud_employee.cloud_employee import add_employee
 
+
 def is_company_admin(user, company):
 	return frappe.db.get_value("Cloud Company", {"name": company, "admin": user}, "admin")
 
@@ -22,7 +23,7 @@ def list_possible_users(company):
 	domain = get_domain(company)
 	users = list_users_by_domain(domain)
 	employees = list_users(company)
-	return [user for user in users if user not in employees]
+	return [user for user in users if user.name not in employees]
 
 
 def get_context(context):

@@ -13,7 +13,7 @@ frappe.ready(function() {
 
 		frappe.call({
 			type: "POST",
-			method: "cloud.cloud.doctype.cloud_employee.cloud_employee.add_user",
+			method: "cloud.cloud.doctype.cloud_employee.cloud_employee.add_employee",
 			btn: $(".btn-cloud-add-user"),
 			args: args,
 			callback: function(r) {
