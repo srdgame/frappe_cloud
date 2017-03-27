@@ -57,3 +57,10 @@ def has_permission(doc, ptype, user):
 
 	return doc.project in prj_list
 
+
+def list_admin_sites(user, check_enable=True):
+	projects = list_admin_projects(user)
+	filters = {"project": ["in", projects]}
+	if check_enable:
+		filters["enabled"] = 1
+	return [d[0] for d in frappe.db.get_values("Cloud Project Site", filters=filters)]
