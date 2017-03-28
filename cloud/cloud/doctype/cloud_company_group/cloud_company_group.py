@@ -48,7 +48,7 @@ def list_user_groups(user):
 def list_users(group):
 	users = []
 	for d in frappe.db.get_values("Cloud Company GroupUser", {"parent": group}, ["user", "role", "modified", "creation"]):
-		users.append(_dict({"user": d[0], "role": d[1], "modified": d[2], "creation": d[3], "name": group}))
+		users.append(_dict({"name": d[0], "role": d[1], "modified": d[2], "creation": d[3], "group": group}))
 
 	return users
 
