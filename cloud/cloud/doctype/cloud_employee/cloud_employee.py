@@ -44,9 +44,9 @@ def delete_employee(user, company):
 
 
 def query_employee(doctype, txt, searchfield, start, page_len, filters):
-	return frappe.db.sql("""select distinct employee.name, concat_ws(' ', user.first_name, user.middle_name, user.last_name) 
+	return frappe.db.sql("""select distinct concat_ws(' ', user.first_name, user.middle_name, user.last_name), employee.name
 		from `tabCloud Employee` employee, `tabUser` user 
-		where employee.company = %s and employee.user = user.email
+		where employee.company = %s and employee.name = user.name
 		and employee.%s like %s order by employee.name limit %s, %s""" %
 		("%s", searchfield, "%s", "%s", "%s"),
 		(filters["company"], "%%%s%%" % txt, start, page_len), as_list=1)
