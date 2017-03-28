@@ -42,3 +42,10 @@ def delete_employee(user, company):
 
 	return _("Employee has been deleted")
 
+
+def query_employee(doctype, txt, searchfield, start, page_len, filters):
+	return frappe.db.sql("""select name, company from `tabCloud Company Group`
+		where company = %s
+		and %s like %s order by name limit %s, %s""" %
+		("%s", searchfield, "%s", "%s", "%s"),
+		(filters["company"], "%%%s%%" % txt, start, page_len), as_list=1)
