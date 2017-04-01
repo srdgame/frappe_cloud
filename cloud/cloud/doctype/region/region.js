@@ -5,7 +5,7 @@ frappe.ui.form.on('Region', {
 	setup: function(frm) {
 		frm.fields_dict['region_parent'].get_query  = function(){
 			return {
-				query:"tieta.tieta.doctype.region.region.query_region",
+				query:"cloud.cloud.doctype.region.region.query_region",
 				filters: {"type": frm.doc.type}
 			};
 		};
