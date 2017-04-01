@@ -8,7 +8,7 @@ app_title = "Cloud"
 app_publisher = "Dirk Chang"
 app_description = "Cloud App Common Base"
 app_icon = "fa fa-users"
-app_color = "green"
+app_color = "#11AAEE"
 app_email = "dirk.chang@symid.com"
 app_license = "MIT"
 

@@ -6,7 +6,7 @@ def get_data():
 	return [
 		{
 			"module_name": "Cloud",
-			"color": "green",
+			"color": "#11AAEE",
 			"icon": "fa fa-users",
 			"type": "module",
 			"label": _("Cloud")
