@@ -6,5 +6,15 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
+
 class RegionAddress(Document):
 	pass
+
+
+@frappe.whitelist()
+def get_address_text(province, city=None, county=None, town=None, address=None):
+	province_name = frappe.get_value("Region", province, "region_name") or ""
+	city_name = frappe.get_value("Region", city, "region_name") or ""
+	county_name = frappe.get_value("Region", county, "region_name") or ""
+	town_name = frappe.get_value("Region", town, "region_name") or ""
+	return " ".join([province_name, city_name, county_name, town_name, address or ""])
