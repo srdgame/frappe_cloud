@@ -19,47 +19,23 @@ parent_type = {
 
 
 def query_region(doctype, txt, searchfield, start, page_len, filters):
+	filters = filters or {}
+
 	typ = parent_type[filters["type"]] or ""
+	if not filters["parent"]:
+		return frappe.db.sql("""select name, description from `tabRegion`
+			where type = %s and region_parent = %s
+			and %s like %s order by name limit %s, %s""" %
+			("%s", searchfield, "%s", "%s", "%s"),
+			(typ, "%%%s%%" % txt, start, page_len), as_list=1)
+
+
+def query_child_region(doctype, txt, searchfield, start, page_len, filters):
+	filters = filters or {}
+
 	return frappe.db.sql("""select name, description from `tabRegion`
-		where type = %s
+		where type = %s and region_parent = %s
 		and %s like %s order by name limit %s, %s""" %
-		("%s", searchfield, "%s", "%s", "%s"),
-		(typ, "%%%s%%" % txt, start, page_len), as_list=1)
+		("%s", "%s", searchfield, "%s", "%s", "%s"),
+		(filters["parent"], filters["parent"], "%%%s%%" % txt, start, page_len), as_list=1)
 
-
-def query_province(doctype, txt, searchfield, start, page_len, filters):
-	return frappe.db.sql("""select name, description from `tabRegion`
-		where type = 'Province'
-		and %s like %s order by name limit %s, %s""" %
-		(searchfield, "%s", "%s", "%s"),
-		("%%%s%%" % txt, start, page_len), as_list=1)
-
-
-def query_city(doctype, txt, searchfield, start, page_len, filters):
-	if not filters["province"]:
-		return ""
-	return frappe.db.sql("""select name, description from `tabRegion`
-		where type = 'City' and region_parent = %s
-		and %s like %s order by name limit %s, %s""" %
-		("%s", searchfield, "%s", "%s", "%s"),
-		(filters["province"], "%%%s%%" % txt, start, page_len), as_list=1)
-
-
-def query_county(doctype, txt, searchfield, start, page_len, filters):
-	if not filters["city"]:
-		return ""
-	return frappe.db.sql("""select name, description from `tabRegion`
-		where type = 'County' and region_parent = %s
-		and %s like %s order by name limit %s, %s""" %
-		("%s", searchfield, "%s", "%s", "%s"),
-		(filters["city"], "%%%s%%" % txt, start, page_len), as_list=1)
-
-
-def query_town(doctype, txt, searchfield, start, page_len, filters):
-	if not filters["county"]:
-		return ""
-	return frappe.db.sql("""select name, description from `tabRegion`
-		where type = 'Town' and region_parent = %s
-		and %s like %s order by name limit %s, %s""" %
-		("%s", searchfield, "%s", "%s", "%s"),
-		(filters["county"], "%%%s%%" % txt, start, page_len), as_list=1)
