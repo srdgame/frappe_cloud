@@ -7,7 +7,7 @@ def get_data():
 		{
 			"module_name": "Cloud",
 			"color": "#11AAEE",
-			"icon": "fa fa-users",
+			"icon": "octicon octicon-flame",
 			"type": "module",
 			"label": _("Cloud")
 		}
