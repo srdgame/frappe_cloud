@@ -60,6 +60,8 @@ def has_permission(doc, ptype, user):
 
 def list_admin_projects(user, check_enable=True):
 	ent_list = list_admin_companies(user)
+	if len(ent_list) == 0:
+		return []
 	filters = {"company": ["in", ent_list]}
 	if check_enable:
 		filters["enabled"] = 1
