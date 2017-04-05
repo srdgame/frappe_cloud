@@ -33,7 +33,7 @@ def has_permission(doc, ptype, user):
 	return False
 
 
-def list_user_groups(user):
+def list_user_groups(user, check_enable=True):
 	groups = []
 	for d in frappe.db.get_values("Cloud Company GroupUser", {"user": user}, ["parent", "role", "modified", "creation"]):
 		if frappe.get_value("Cloud Company Group", d[0], "enabled"):
