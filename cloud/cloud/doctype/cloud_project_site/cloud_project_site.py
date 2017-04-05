@@ -60,6 +60,8 @@ def has_permission(doc, ptype, user):
 
 def list_admin_sites(user, check_enable=True):
 	projects = list_admin_projects(user)
+	if len(projects) == 0:
+		return []
 	filters = {"project": ["in", projects]}
 	if check_enable:
 		filters["enabled"] = 1
