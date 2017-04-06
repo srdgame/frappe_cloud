@@ -4,12 +4,16 @@
 
 from __future__ import unicode_literals
 import frappe
-from frappe import _dict
+from frappe import _dict, throw, _
 from frappe.model.document import Document
 
 
 class Region(Document):
-	pass
+	def validate(self):
+		brothers = [d[0] for d in frappe.db.get_values('Region', {"region_parent": self.region_parent}, "region_name")]
+		print(brothers)
+		if self.region_name in brothers:
+			throw(_("Duplicated Region Name Found"))
 
 
 parent_type = {
