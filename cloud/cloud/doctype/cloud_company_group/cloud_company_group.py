@@ -40,7 +40,7 @@ def list_user_groups(user, check_enable=True):
 			groups.append(_dict({"name": d[0], "role": d[1], "modified": d[2], "creation": d[3], "user": user}))
 	for comp in list_admin_companies(user):
 		for d in frappe.db.get_values("Cloud Company Group", {"company": comp, "enabled": 1}, "name"):
-			groups.append(_dict({"group": d[0], "role": "admin", "user": user}))
+			groups.append(_dict({"name": d[0], "role": "admin", "user": user}))
 
 	return groups
 
