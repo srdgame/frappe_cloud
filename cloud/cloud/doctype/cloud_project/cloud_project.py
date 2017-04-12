@@ -38,6 +38,7 @@ def get_list_context(context=None):
 		"row_template": "templates/generators/cloud_project_row.html",
 	}
 
+
 def get_permission_query_conditions(user):
 	if 'Cloud Manager' in frappe.get_roles(user):
 		return ""
