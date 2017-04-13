@@ -3,6 +3,8 @@
 
 frappe.ui.form.on('Cloud Project Site', {
 	refresh: function(frm) {
-
+		if (frm.doc.naming_series == 'CELL-') {
+			frm.set_read_only();
+		}
 	}
 });
