@@ -10,7 +10,7 @@ from cloud.cloud.doctype.cloud_settings.cloud_settings import CloudSettings
 
 class CloudCompany(Document):
 
-	def before_save(self):
+	def on_update(self):
 		org_admin = None
 		if not self.is_new():
 			org_admin = frappe.db.get_value("Cloud Company", self.name, "admin")
