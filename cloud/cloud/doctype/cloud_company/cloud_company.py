@@ -10,12 +10,13 @@ from cloud.cloud.doctype.cloud_settings.cloud_settings import CloudSettings
 
 class CloudCompany(Document):
 
-	def on_update(self):
+	def before_save(self):
 		org_admin = None
 		if not self.is_new():
 			org_admin = frappe.db.get_value("Cloud Company", self.name, "admin")
-		if org_admin != self.admin:
-			self.run_method("on_admin_remove", user=org_admin)
+		if org_admin and org_admin != self.admin:
+			if len(list_admin_companies(org_admin)) == 1:
+				self.run_method("on_admin_remove", user=org_admin)
 		self.run_method("on_admin_insert", user=self.admin)
 
 	def on_trash(self):
