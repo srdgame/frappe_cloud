@@ -1,0 +1,102 @@
+apps/cloud/cloud/templates/pages/cloud_add_user.html +64,Add User,添加用户
+apps/cloud/cloud/templates/pages/cloud_add_user.html +48,Add User By Email,添加指定用户
+apps/cloud/cloud/templates/pages/cloud_add_user.html +53,Add User by Email,
+apps/cloud/cloud/templates/pages/cloud_add_user.html +3,Adding User to ,添加用户到
+DocType: Cloud Company,Address,地址
+DocType: Cloud Project Site,Address Settings,地址设定
+DocType: Cloud Company,Admin,管理员
+apps/cloud/cloud/templates/pages/cloud_company.html +44,Administrator,超级管理员
+DocType: Region,All,所有
+apps/cloud/cloud/templates/pages/cloud_employee.py +37,Back,后退
+DocType: Cloud Project Site,CELL-,
+DocType: Region,City,城市
+DocType: Cloud Company,Cloud,
+apps/cloud/cloud/templates/pages/cloud_employee.html +3,Cloud Account - ,Cloud 账户 -
+apps/cloud/cloud/hooks.py +54,Cloud Companies,Cloud 公司列表
+DocType: Cloud Company,Cloud Company,Cloud 公司
+DocType: Cloud Company Group,Cloud Company Group,Cloud 公司组
+DocType: Cloud Company GroupUser,Cloud Company GroupUser,
+DocType: Cloud Employee,Cloud Employee,Cloud 员工
+apps/cloud/cloud/hooks.py +66,Cloud Employees,Cloud 员工列表
+DocType: Cloud Company,Cloud Manager,Cloud 管理员
+DocType: Cloud Permission,Cloud Permission,Cloud 权限
+DocType: Cloud Project,Cloud Project,Cloud 项目
+DocType: Cloud Project Site,Cloud Project Site,Cloud 项目现场
+DocType: Cloud Settings,Cloud Settings,Cloud 设定
+DocType: Cloud SignUpRole,Cloud SignUpRole,
+DocType: Cloud Company,Cloud User,Cloud 用户
+DocType: Cloud User Role,Cloud User Role,Cloud 用户角色
+DocType: Cloud User RolePermission,Cloud User RolePermission,
+DocType: Cloud Company Group,Company,公司
+DocType: Cloud Company,Company Name,公司名称
+DocType: Cloud Company,Contact,联系信息
+DocType: Cloud Company,Contact Settings,联系信息
+DocType: Region,County,县
+apps/cloud/cloud/templates/pages/cloud_add_user.html +29,Created,创建
+DocType: Cloud Settings,Default Cloud Company,默认Cloud公司
+DocType: Cloud Settings,Default Signup Roles,默认注册用户角色
+DocType: Cloud Settings,Default Wechat App,默认微信公共帐号
+apps/cloud/cloud/templates/pages/cloud_employee.html +31,Delete User From,删除用户
+DocType: Cloud Company Group,Description,描述
+DocType: Cloud Company,Domain,域名
+apps/cloud/cloud/cloud/doctype/region/region.py +16,Duplicated Region Name Found,重复的行政区名称
+apps/cloud/cloud/templates/pages/cloud_company_group.html +24,Edit,编辑
+apps/cloud/cloud/templates/pages/cloud_company.html +27,Edit Employee Groups,编辑员工组
+apps/cloud/cloud/templates/pages/cloud_employee.html +25,Edit IOT Profile,编辑 IOT 信息
+apps/cloud/cloud/templates/pages/cloud_add_user.html +60,Email,邮件
+apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +43,Employee has been deleted,员工删除成功
+apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +33,Employee has ben added,员工增加成功
+DocType: Cloud Company,Enabled,启用
+DocType: Cloud Company,Full Company Name,公司全称
+DocType: Cloud Company Group,Group Name,组名
+apps/cloud/cloud/templates/pages/cloud_company.html +52,Groups,组列表
+DocType: Cloud Project,Info,信息
+DocType: Cloud Project,Information,信息
+DocType: Cloud Project Site,Latitude,维度
+DocType: Cloud Company,Logo,Logo
+DocType: Cloud Project Site,Longitude,经度
+DocType: Cloud Company Group,Member Settings,成员设定
+apps/cloud/cloud/templates/pages/cloud_company_group.html +62,More,更多
+DocType: Cloud Project,Name,名称
+DocType: Cloud Project,Naming Series,命名系列
+apps/cloud/cloud/templates/pages/cloud_company.html +54,New group,新增员工组
+apps/cloud/cloud/templates/pages/cloud_company_group.html +54,New user,新增员工
+apps/cloud/cloud/templates/pages/cloud_company.html +66,No groups,没有员工组
+apps/cloud/cloud/templates/pages/cloud_company_group.html +65,No users,没有员工
+DocType: Cloud Project,PRJ-,
+DocType: Cloud User RolePermission,Permission,权限
+DocType: Cloud User Role,Permission List,权限列表
+DocType: Cloud Permission,Permission Name,权限名称
+apps/cloud/cloud/templates/pages/cloud_add_user.html +17,Possible Users,可用的用户
+DocType: Cloud Project Site,Project,项目
+DocType: Region,Province,省
+DocType: Region,Region,区域
+DocType: Region Address,Region Address,行政区地址
+DocType: Region,Region Name,行政区名称
+DocType: Region,Region Parent,行政区从属
+apps/cloud/cloud/templates/pages/cloud_employee.html +22,Reset Password,重置密码
+DocType: Cloud Company GroupUser,Role,角色
+DocType: Cloud Settings,Role List,角色列表
+DocType: Cloud User Role,Role Name,角色名称
+DocType: Cloud Project Site,SITE-,
+apps/cloud/cloud/templates/pages/cloud_company.js +44,Show closed,显示已关闭项
+apps/cloud/cloud/templates/pages/cloud_company.js +46,Show open,只显示未关闭项
+DocType: Cloud Permission,System Manager,系统管理员
+apps/cloud/cloud/cloud/doctype/cloud_company/cloud_company.py +51,The Cloud Companies those you can manage!,可管理的Cloud 公司列表
+DocType: Region,Town,镇
+DocType: Region,Type,类型
+DocType: Cloud Company GroupUser,User,用户
+DocType: Cloud Company Group,User List,用户列表
+apps/cloud/cloud/templates/pages/cloud_add_user.js +25,User has been added,员工增加成功
+apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +19,User in in another company {0},该用户是{0}公司的员工
+apps/cloud/cloud/templates/pages/cloud_employee.html +39,Username,用户名
+apps/cloud/cloud/templates/pages/cloud_company_group.html +53,Users,用户列表
+DocType: Cloud Permission,Value,值
+DocType: Cloud Company,Wechat,微信
+DocType: Cloud Company,Wechat App,微信公共号
+apps/cloud/cloud/templates/pages/cloud_add_user.py +39,You need specified Cloud Enterprise,需要指定Cloud公司
+apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +23,You not the admin of company {0},您不是{0}公司的管理员
+apps/cloud/cloud/cloud/doctype/cloud_company/cloud_company.py +50,Your Companies,您的公司列表
+apps/cloud/cloud/cloud/doctype/cloud_project_site/cloud_project_site.py +36,Your Project Sites,您的项目现场列表
+apps/cloud/cloud/cloud/doctype/cloud_project/cloud_project.py +36,Your Projects,您的项目列表
+DocType: Cloud SignUpRole,role,角色
