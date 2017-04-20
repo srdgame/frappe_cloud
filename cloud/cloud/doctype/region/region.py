@@ -10,6 +10,9 @@ from frappe.model.document import Document
 
 class Region(Document):
 	def validate(self):
+		if self.type != "Province" and not self.region_parent:
+			throw(_("Region Parent is required!"))
+
 		brothers = [d[0] for d in frappe.db.get_values('Region', {"region_parent": self.region_parent}, "region_name")]
 		print(brothers)
 		if self.region_name in brothers:
