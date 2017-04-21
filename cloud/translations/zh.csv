@@ -14,7 +14,7 @@ DocType: Cloud Company,Cloud,
 apps/cloud/cloud/templates/pages/cloud_employee.html +3,Cloud Account - ,Cloud 账户 -
 apps/cloud/cloud/hooks.py +54,Cloud Companies,Cloud 公司列表
 DocType: Cloud Company,Cloud Company,Cloud 公司
-DocType: Cloud Company Group,Cloud Company Group,Cloud 公司组
+DocType: Cloud Company Group,Cloud Company Group,Cloud 组
 DocType: Cloud Company GroupUser,Cloud Company GroupUser,
 DocType: Cloud Employee,Cloud Employee,Cloud 员工
 apps/cloud/cloud/hooks.py +66,Cloud Employees,Cloud 员工列表
