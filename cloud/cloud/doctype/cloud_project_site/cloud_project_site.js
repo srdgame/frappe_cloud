@@ -33,9 +33,6 @@ frappe.ui.form.on('Cloud Project Site', {
 		frm.fields_dict['address'].grid.cannot_add_rows = true;
 	},
 	refresh: function(frm) {
-		if (frm.doc.naming_series == 'CELL-') {
-			frm.set_read_only();
-		}
 	},
 	update_address: function(frm, row) {
 		frappe.call({
