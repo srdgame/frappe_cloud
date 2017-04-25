@@ -11,5 +11,8 @@ frappe.ui.form.on('Cloud Project', {
 	},
 	refresh: function(frm) {
 
+	},
+	company: function (frm) {
+		frm.set_value("group", null);
 	}
 });
