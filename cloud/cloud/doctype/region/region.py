@@ -13,10 +13,15 @@ class Region(Document):
 		if self.type != "Province" and not self.region_parent:
 			throw(_("Region Parent is required!"))
 
-		brothers = [d[0] for d in frappe.db.get_values('Region', {"region_parent": self.region_parent}, "region_name")]
-		print(brothers)
+		brothers = [d[0] for d in frappe.db.get_values('Region', {"region_parent": self.region_parent, "name":("!=", self.name)}, "region_name")]
 		if self.region_name in brothers:
 			throw(_("Duplicated Region Name Found"))
+
+		self.description = self.region_name
+		rgn = self.region_parent
+		while rgn:
+			self.description = frappe.get_value("Region", rgn, "region_name") + " " + self.description
+			rgn = frappe.get_value("Region", rgn, "region_parent")
 
 
 parent_type = {
