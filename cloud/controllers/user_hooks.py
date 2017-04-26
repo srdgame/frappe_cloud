@@ -7,5 +7,7 @@ import frappe
 
 def after_insert(doc, method):
 	cloud_settings = frappe.get_doc('Cloud Settings', 'Cloud Settings')
-	doc.add_roles(cloud_settings.role_list)
+	if len(cloud_settings.role_list) > 0:
+		roles = [d.role for d in cloud_settings.role_list]
+		doc.add_roles(*roles)
 
