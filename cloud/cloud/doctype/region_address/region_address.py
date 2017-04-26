@@ -8,7 +8,16 @@ from frappe.model.document import Document
 
 
 class RegionAddress(Document):
-	pass
+	def is_region_of(self, region):
+		if self.town == region:
+			return True
+		if self.county == region:
+			return True
+		if self.city == region:
+			return True
+		if self.province == region:
+			return True
+		return False
 
 
 @frappe.whitelist()
