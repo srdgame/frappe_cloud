@@ -13,11 +13,12 @@
  "engine": "InnoDB", 
  "fields": [
   {
+   "allow_bulk_edit": 0, 
    "allow_on_submit": 0, 
    "bold": 0, 
    "collapsible": 0, 
    "columns": 4, 
-   "fieldname": "user", 
+   "fieldname": "user",
    "fieldtype": "Link", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
@@ -43,6 +44,7 @@
    "unique": 0
   }, 
   {
+   "allow_bulk_edit": 0, 
    "allow_on_submit": 0, 
    "bold": 0, 
    "collapsible": 0, 
@@ -83,7 +85,7 @@
  "issingle": 0, 
  "istable": 1, 
  "max_attachments": 0, 
- "modified": "2017-04-21 10:15:15.968295", 
+ "modified": "2017-04-26 20:00:10.738889", 
  "modified_by": "Administrator", 
  "module": "Cloud", 
  "name": "Cloud Company GroupUser", 
