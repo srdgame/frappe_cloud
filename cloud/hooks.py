@@ -131,6 +131,12 @@ has_permission = {
 #	}
 # }
 
+doc_events = {
+	"User": {
+		"after_insert": "cloud.controllers.user_hooks.after_insert",
+	},
+}
+
 # Scheduled Tasks
 # ---------------
 

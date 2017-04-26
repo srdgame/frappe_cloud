@@ -3,10 +3,10 @@
 
 frappe.ui.form.on('Cloud Company Group', {
 	setup: function(frm) {
-		frm.fields_dict.user_list.grid.get_field('user').get_query  = function(){
+		frm.fields_dict.user_list.grid.get_field('user').get_query  = function(doc){
 			return {
 				query:"cloud.cloud.doctype.cloud_employee.cloud_employee.query_employee",
-				filters: {"company": frm.doc.company}
+				filters: {"company": doc.company}
 			};
 		};
 	},
