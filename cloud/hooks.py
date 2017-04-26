@@ -105,6 +105,7 @@ portal_menu_items = [
 
 permission_query_conditions = {
 	"Cloud Company": "cloud.cloud.doctype.cloud_company.cloud_company.get_permission_query_conditions",
+	"Cloud Employee": "cloud.cloud.doctype.cloud_employee.cloud_employee.get_permission_query_conditions",
 	"Cloud Company Group": "cloud.cloud.doctype.cloud_company_group.cloud_company_group.get_permission_query_conditions",
 	"Cloud Project": "cloud.cloud.doctype.cloud_project.cloud_project.get_permission_query_conditions",
 	"Cloud Project Site": "cloud.cloud.doctype.cloud_project_site.cloud_project_site.get_permission_query_conditions",
@@ -112,6 +113,7 @@ permission_query_conditions = {
 
 has_permission = {
 	"Cloud Company": "cloud.cloud.doctype.cloud_company.cloud_company.has_permission",
+	"Cloud Employee": "cloud.cloud.doctype.cloud_employee.cloud_employee.has_permission",
 	"Cloud Company Group": "cloud.cloud.doctype.cloud_company_group.cloud_company_group.has_permission",
 	"Cloud Project": "cloud.cloud.doctype.cloud_project.cloud_project.has_permission",
 	"Cloud Project Site": "cloud.cloud.doctype.cloud_project_site.cloud_project_site.has_permission",

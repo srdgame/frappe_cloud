@@ -50,3 +50,24 @@ def query_employee(doctype, txt, searchfield, start, page_len, filters):
 		and employee.%s like %s order by employee.name limit %s, %s""" %
 		("%s", searchfield, "%s", "%s", "%s"),
 		(filters["company"], "%%%s%%" % txt, start, page_len), as_list=1)
+
+
+def get_permission_query_conditions(user):
+	if 'Cloud Manager' in frappe.get_roles(user):
+		return ""
+	from cloud.cloud.doctype.cloud_company.cloud_company import list_admin_companies
+
+	ent_list = list_admin_companies(user)
+
+	return """(`tabCloud Employee`.company in ({user_ents}))""".format(
+		user_ents='"' + '", "'.join(ent_list) + '"')
+
+
+def has_permission(doc, ptype, user):
+	if 'Cloud Manager' in frappe.get_roles(user):
+		return True
+
+	if frappe.get_value('Cloud Company', {'admin': user, 'name': doc.company}):
+		return True
+
+	return False
