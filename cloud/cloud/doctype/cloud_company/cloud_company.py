@@ -53,6 +53,7 @@ def get_list_context(context=None):
 		"row_template": "templates/generators/cloud_company_row.html",
 	}
 
+
 def get_permission_query_conditions(user):
 	if 'Cloud Manager' in frappe.get_roles(user):
 		return ""
@@ -82,6 +83,7 @@ def list_user_companies(user):
 		clist.append(comp)
 
 	return clist
+
 
 def list_users(company):
 	if frappe.db.get_value("Cloud Company", company, "enabled") != 1:
