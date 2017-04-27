@@ -31,7 +31,7 @@ DocType: Cloud Company,Company Name,公司名称
 DocType: Cloud Company,Contact,联系信息
 DocType: Cloud Company,Contact Settings,联系信息
 DocType: Region,County,县
-apps/cloud/cloud/cloud/doctype/region/region.js +15,Create Sub Region,
+apps/cloud/cloud/cloud/doctype/region/region.js +15,Create Sub Region,创建子区域
 apps/cloud/cloud/templates/pages/cloud_add_user.html +29,Created,创建
 DocType: Cloud Settings,Default Cloud Company,默认Cloud公司
 DocType: Cloud Settings,Default Signup Roles,默认注册用户角色
@@ -53,7 +53,7 @@ DocType: Cloud Company Group,Group Name,组名称
 apps/cloud/cloud/templates/pages/cloud_company.html +52,Groups,组列表
 DocType: Cloud Project,Info,信息
 DocType: Cloud Project,Information,信息
-DocType: Cloud Company Group,Information Settings,
+DocType: Cloud Company Group,Information Settings,信息
 DocType: Cloud Project Site,Latitude,维度
 DocType: Cloud Company,Logo,Logo
 DocType: Cloud Project Site,Longitude,经度
