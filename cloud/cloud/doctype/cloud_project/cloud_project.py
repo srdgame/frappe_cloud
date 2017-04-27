@@ -76,7 +76,7 @@ def list_user_projects(user, check_enable=True):
 	if 'Cloud Manager' in frappe.get_roles(user):
 		return [d[0] for d in frappe.db.get_values('Cloud Project', filters, 'name')]
 
-	groups = [d[0] for d in frappe.db.get_values("Cloud Company GroupUser", {"user": user})]
+	groups = [d[0] for d in frappe.db.get_values("Cloud Company GroupUser", {"user": user}, "parent")]
 
 	filters["group"] = ["in", groups]
 	return [d[0] for d in frappe.db.get_values("Cloud Project", filters)]
