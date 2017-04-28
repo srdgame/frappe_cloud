@@ -40,10 +40,10 @@ def get_context(context):
 		raise frappe.ValidationError(_("You need specified Cloud Enterprise"))
 
 	user_roles = frappe.get_roles(frappe.session.user)
-	if 'Cloud User' not in user_roles or frappe.session.user == 'Guest':
+	if 'Company Admin' not in user_roles or frappe.session.user == 'Guest':
 		raise frappe.PermissionError("Your account is not an Cloud User!")
 
-	if not (is_company_admin(user, company) or 'Cloud User' in user_roles):
+	if not (is_company_admin(user, company) or 'Company Admin' in user_roles):
 		raise frappe.PermissionError
 
 	context.no_cache = 1

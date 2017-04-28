@@ -23,10 +23,10 @@ class CloudCompany(Document):
 		self.run_method("on_admin_remove", user=self.admin)
 
 	def on_admin_insert(self, user):
-		frappe.get_doc('User', user).add_roles('Cloud User')
+		frappe.get_doc('User', user).add_roles('Company Admin')
 
 	def on_admin_remove(self, user):
-		frappe.get_doc('User', user).remove_roles('Cloud User')
+		frappe.get_doc('User', user).remove_roles('Company Admin')
 
 
 def get_company_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by="modified desc"):
@@ -69,7 +69,7 @@ def has_permission(doc, ptype, user):
 
 
 def list_admin_companies(user):
-	if 'Cloud User' not in frappe.get_roles(user):
+	if 'Company Admin' not in frappe.get_roles(user):
 		return []
 	return [d[0] for d in frappe.db.get_values("Cloud Company", {"admin": user, "enabled": 1}, "name")]
 

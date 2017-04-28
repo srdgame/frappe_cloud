@@ -70,7 +70,7 @@ website_route_rules = [
 
 # portal_menu_items = [
 # 	{"title": _("Cloud Companies"), "route": "/cloud_companies", "reference_doctype": "Cloud Company",
-# 		"role": "Cloud User"}
+# 		"role": "Company Admin"}
 # ]
 
 # Generators
