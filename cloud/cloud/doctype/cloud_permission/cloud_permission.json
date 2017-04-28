@@ -14,6 +14,7 @@
  "engine": "InnoDB", 
  "fields": [
   {
+   "allow_bulk_edit": 0, 
    "allow_on_submit": 0, 
    "bold": 0, 
    "collapsible": 0, 
@@ -43,6 +44,7 @@
    "unique": 1
   }, 
   {
+   "allow_bulk_edit": 0, 
    "allow_on_submit": 0, 
    "bold": 0, 
    "collapsible": 0, 
@@ -82,11 +84,11 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2017-04-21 10:15:22.294968", 
+ "modified": "2017-04-28 12:41:42.193167", 
  "modified_by": "Administrator", 
  "module": "Cloud", 
  "name": "Cloud Permission", 
- "name_case": "Title Case", 
+ "name_case": "", 
  "owner": "Administrator", 
  "permissions": [
   {
@@ -156,7 +158,7 @@
  "show_name_in_global_search": 0, 
  "sort_field": "modified", 
  "sort_order": "DESC", 
- "title_field": "perm_name", 
+ "title_field": "", 
  "track_changes": 1, 
  "track_seen": 0
 }
