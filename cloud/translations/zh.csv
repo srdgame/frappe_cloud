@@ -7,7 +7,7 @@ DocType: Cloud Project Site,Address Text,地址信息
 DocType: Cloud Company,Admin,管理员
 apps/cloud/cloud/templates/pages/cloud_company.html +44,Administrator,超级管理员
 DocType: Region,All,所有
-apps/cloud/cloud/templates/pages/cloud_employee.py +37,Back,后退
+apps/cloud/cloud/templates/pages/cloud_employee.py +38,Back,后退
 DocType: Region,City,城市
 DocType: Cloud Company,Cloud,
 apps/cloud/cloud/templates/pages/cloud_employee.html +3,Cloud Account - ,Cloud 账户 -
@@ -23,10 +23,10 @@ DocType: Cloud Project,Cloud Project,Cloud 项目
 DocType: Cloud Project Site,Cloud Project Site,Cloud 项目现场
 DocType: Cloud Settings,Cloud Settings,Cloud 设定
 DocType: Cloud SignUpRole,Cloud SignUpRole,
-DocType: Cloud Company,Cloud User,Cloud 用户
 DocType: Cloud User Role,Cloud User Role,Cloud 用户角色
 DocType: Cloud User RolePermission,Cloud User RolePermission,
 DocType: Cloud Company Group,Company,公司
+DocType: Cloud Company,Company Admin,公司管理员
 DocType: Cloud Company,Company Name,公司名称
 DocType: Cloud Company,Contact,联系信息
 DocType: Cloud Company,Contact Settings,联系信息
@@ -97,7 +97,7 @@ apps/cloud/cloud/templates/pages/cloud_company_group.html +53,Users,用户列表
 DocType: Cloud Permission,Value,值
 DocType: Cloud Company,Wechat,微信
 DocType: Cloud Company,Wechat App,微信公共号
-apps/cloud/cloud/templates/pages/cloud_add_user.py +39,You need specified Cloud Enterprise,需要指定Cloud公司
+apps/cloud/cloud/templates/pages/cloud_add_user.py +40,You need specified Cloud Enterprise,需要指定Cloud公司
 apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +23,You not the admin of company {0},您不是{0}公司的管理员
 apps/cloud/cloud/cloud/doctype/cloud_company/cloud_company.py +50,Your Companies,您的公司列表
 apps/cloud/cloud/cloud/doctype/cloud_project_site/cloud_project_site.py +36,Your Project Sites,您的项目现场列表
