@@ -23,8 +23,7 @@ frappe.ui.form.on('Region', {
 				});
 			});
 
-			frm.custom_buttons[__("Create Sub Region")].removeClass("btn-default");
-			frm.custom_buttons[__("Create Sub Region")].addClass("btn-primary");
+			frm.custom_buttons[__("Create Sub Region")].removeClass("btn-default").addClass("btn-primary");
 		}
 	}
 });
