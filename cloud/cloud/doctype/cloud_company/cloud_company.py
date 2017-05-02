@@ -9,6 +9,9 @@ from frappe.model.document import Document
 from cloud.cloud.doctype.cloud_settings.cloud_settings import CloudSettings
 
 class CloudCompany(Document):
+	def validate(self):
+		if self.wechat:
+			self.wechat_app = self.wechat_app or CloudSettings.get_default_wechat_app()
 
 	def before_save(self):
 		org_admin = None
