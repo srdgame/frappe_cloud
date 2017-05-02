@@ -18,7 +18,6 @@ frappe.ui.form.on('Cloud Company Group', {
 frappe.ui.form.on('Cloud Company GroupUser', {
 	user_list_add: function (frm, cdt, cdn) {
 		var row = frappe.get_doc(cdt, cdn);
-		alert(row);
 		row.user = "";
 	}
 });
