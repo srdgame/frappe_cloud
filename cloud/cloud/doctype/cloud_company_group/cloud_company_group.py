@@ -4,13 +4,18 @@
 
 from __future__ import unicode_literals
 import frappe
-from frappe import _dict
+from frappe import _dict, throw, _
 from frappe.model.document import Document
 from cloud.cloud.doctype.cloud_company.cloud_company import list_admin_companies
 
 
 class CloudCompanyGroup(Document):
-	pass
+	def validate(self):
+		list = _dict()
+		for d in self.user_list:
+			if list.get(d.user):
+				throw(_("Duplicated user found! {0}").format(d.user))
+			list[d.user] = d
 
 
 def get_permission_query_conditions(user):
