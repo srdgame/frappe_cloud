@@ -71,7 +71,7 @@ DocType: Cloud User Role,Permission List,权限列表
 DocType: Cloud Permission,Permission Name,权限名称
 apps/cloud/cloud/templates/pages/cloud_add_user.html +17,Possible Users,可用的用户
 DocType: Cloud Project Site,Project,项目
-DocType: Region,Province,省
+DocType: Region,Province,省/直辖市
 DocType: Region,Region,区域
 DocType: Region Address,Region Address,行政区地址
 DocType: Region,Region Name,行政区名称
