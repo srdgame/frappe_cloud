@@ -7,7 +7,7 @@ DocType: Cloud Project Site,Address Text,地址信息
 DocType: Cloud Company,Admin,管理员
 apps/cloud/cloud/templates/pages/cloud_company.html +44,Administrator,超级管理员
 DocType: Region,All,所有
-apps/cloud/cloud/templates/pages/cloud_employee.py +38,Back,后退
+apps/cloud/cloud/templates/pages/cloud_company_group.py +37,Back,后退
 DocType: Region,City,城市
 DocType: Cloud Company,Cloud,
 apps/cloud/cloud/templates/pages/cloud_employee.html +3,Cloud Account - ,Cloud 账户 -
@@ -40,6 +40,7 @@ apps/cloud/cloud/templates/pages/cloud_employee.html +31,Delete User From,删除
 DocType: Cloud Company Group,Description,描述
 DocType: Cloud Company,Domain,域名
 apps/cloud/cloud/cloud/doctype/region/region.py +18,Duplicated Region Name Found,重复的行政区名称
+apps/cloud/cloud/cloud/doctype/cloud_company_group/cloud_company_group.py +17,Duplicated user found! {0},
 apps/cloud/cloud/templates/pages/cloud_company_group.html +24,Edit,编辑
 apps/cloud/cloud/templates/pages/cloud_company.html +27,Edit Employee Groups,编辑员工组
 apps/cloud/cloud/templates/pages/cloud_employee.html +25,Edit IOT Profile,编辑 IOT 信息
@@ -85,7 +86,7 @@ DocType: Cloud Project Site,SITE-,
 apps/cloud/cloud/templates/pages/cloud_company.js +44,Show closed,显示已关闭项
 apps/cloud/cloud/templates/pages/cloud_company.js +46,Show open,只显示未关闭项
 DocType: Cloud Permission,System Manager,系统管理员
-apps/cloud/cloud/cloud/doctype/cloud_company/cloud_company.py +51,The Cloud Companies those you can manage!,可管理的Cloud 公司列表
+apps/cloud/cloud/cloud/doctype/cloud_company/cloud_company.py +54,The Cloud Companies those you can manage!,可管理的Cloud 公司列表
 DocType: Region,Town,镇
 DocType: Region,Type,类型
 DocType: Cloud Company GroupUser,User,用户
@@ -99,7 +100,7 @@ DocType: Cloud Company,Wechat,微信
 DocType: Cloud Company,Wechat App,微信公共号
 apps/cloud/cloud/templates/pages/cloud_add_user.py +40,You need specified Cloud Enterprise,需要指定Cloud公司
 apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +23,You not the admin of company {0},您不是{0}公司的管理员
-apps/cloud/cloud/cloud/doctype/cloud_company/cloud_company.py +50,Your Companies,您的公司列表
+apps/cloud/cloud/cloud/doctype/cloud_company/cloud_company.py +53,Your Companies,您的公司列表
 apps/cloud/cloud/cloud/doctype/cloud_project_site/cloud_project_site.py +36,Your Project Sites,您的项目现场列表
 apps/cloud/cloud/cloud/doctype/cloud_project/cloud_project.py +36,Your Projects,您的项目列表
 DocType: Cloud SignUpRole,role,角色
