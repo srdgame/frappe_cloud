@@ -51,7 +51,7 @@
 <div class='padding'></div>
 <div class="clearfix">
   <h4 style="float: left;">{{ _("Users") }}</h4>
-  <a class="btn btn-secondary btn-default btn-sm" style="float: right; position: relative; top: 10px;" href='/cloud_user?new=1&company={{ doc.ent_name }}'>{{ _("New user") }}</a>
+  <a class="btn btn-secondary btn-default btn-sm" style="float: right; position: relative; top: 10px;" href='/cloud_add_user?new=1&company={{ doc.company }}'>{{ _("New user") }}</a>
 </div>
 
 {% if doc.users %}
