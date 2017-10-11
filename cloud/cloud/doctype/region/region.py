@@ -32,6 +32,7 @@ parent_type = {
 }
 
 
+@frappe.whitelist()
 def query_region(doctype, txt, searchfield, start, page_len, filters):
 	typ = parent_type[filters.get("type")] or ""
 	return frappe.db.sql("""select name, description from `tabRegion`
@@ -41,6 +42,7 @@ def query_region(doctype, txt, searchfield, start, page_len, filters):
 		(typ, "%%%s%%" % txt, start, page_len), as_list=1)
 
 
+@frappe.whitelist()
 def query_child_region(doctype, txt, searchfield, start, page_len, filters):
 
 	parent = filters.get("parent")
