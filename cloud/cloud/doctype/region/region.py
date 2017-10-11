@@ -42,6 +42,7 @@ def query_region(doctype, txt, searchfield, start, page_len, filters):
 		(typ, "%%%s%%" % txt, start, page_len), as_list=1)
 
 
+
 @frappe.whitelist()
 def query_child_region(doctype, txt, searchfield, start, page_len, filters):
 
@@ -60,3 +61,16 @@ def query_child_region(doctype, txt, searchfield, start, page_len, filters):
 		("%s", "%s", searchfield, "%s", "%s", "%s"),
 		(type, parent, "%%%s%%" % txt, start, page_len), as_list=1)
 
+
+@frappe.whitelist()
+def list_region():
+	return frappe.db.sql("""select name, description from `tabRegion`
+		where type = %s""" %("%s"),("province"), as_list=1)
+
+
+@frappe.whitelist()
+def list_child_region(rgn, type):
+	return frappe.db.sql("""select name, description from `tabRegion`
+		where type = %s and region_parent = %s""" %
+		("%s", "%s"),
+		(type, rgn), as_list=1)
