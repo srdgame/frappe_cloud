@@ -18,5 +18,6 @@ def insert_user_roles(user, sleep=None):
 	doc = frappe.get_doc("User", user)
 	if len(cloud_settings.role_list) > 0:
 		roles = [d.role for d in cloud_settings.role_list]
-		doc.add_roles(*roles)
+		doc.append_roles(*roles)
+		doc.save(ignore_permissions=True)
 
