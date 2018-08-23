@@ -11,6 +11,11 @@ class CloudEmployee(Document):
 	pass
 
 
+def on_doctype_update():
+	"""Add indexes in `Cloud Employee`"""
+	frappe.db.add_index("Cloud Employee", ["company"])
+
+
 @frappe.whitelist()
 def add_employee(user, company):
 	comp = frappe.get_value("Cloud Employee", {"user": user}, "company")

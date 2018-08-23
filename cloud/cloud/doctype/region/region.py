@@ -30,6 +30,11 @@ class Region(Document):
 			rgn = frappe.get_value("Region", rgn, "region_parent")
 
 
+def on_doctype_update():
+	"""Add indexes in `Region`"""
+	frappe.db.add_index("Region", ["type", "region_parent"])
+
+
 parent_type = {
 	"Province": "",
 	"City": "Province",

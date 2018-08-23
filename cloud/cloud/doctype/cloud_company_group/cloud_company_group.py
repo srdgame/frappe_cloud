@@ -41,6 +41,11 @@ class CloudCompanyGroup(Document):
 		self.save()
 
 
+def on_doctype_update():
+	"""Add indexes in `Cloud Company Group`"""
+	frappe.db.add_index("Cloud Company Group", ["company"])
+
+
 def get_permission_query_conditions(user):
 	if 'Cloud Manager' in frappe.get_roles(user):
 		return ""
