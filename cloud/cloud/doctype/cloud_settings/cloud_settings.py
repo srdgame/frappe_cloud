@@ -14,3 +14,10 @@ class CloudSettings(Document):
 	@staticmethod
 	def get_default_wechat_app():
 		return frappe.db.get_single_value("Cloud Settings", "default_wechat_app")
+
+
+	@staticmethod
+	def get_on_behalf(auth_code):
+		if frappe.db.get_single_value("Cloud Settings", "cloud_auth_code") == auth_code:
+			return frappe.db.get_single_value("Cloud Settings", "cloud_auth_user")
+
