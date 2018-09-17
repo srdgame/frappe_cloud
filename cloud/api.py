@@ -35,11 +35,10 @@ def list_statistics_companies():
 	:return:
 	'''
 	list = []
-	companies = frappe.get_all("Cloud Company")
+	companies = frappe.get_all("Cloud Company", fields=["name", "admin", "domain", "enabled"])
 	for comp in companies:
-		admin = comp.get("admin")
-		auth_code = frappe.get_value("IOT User Api", admin, "authorization_code")
-		if auth_code:
+		auth_code = frappe.get_value("IOT User Api", comp.admin, "authorization_code")
+		if auth_code and comp.enabled == 1:
 			list.append({
 				'company': comp.name,
 				'auth_code': auth_code,
