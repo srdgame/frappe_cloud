@@ -34,6 +34,8 @@ def list_statistics_companies():
 	Cloud statistics enabled when company owner has created its user auth code
 	:return:
 	'''
+	valid_auth_code()
+
 	list = []
 	companies = frappe.get_all("Cloud Company", fields=["name", "admin", "domain", "enabled"])
 	for comp in companies:
