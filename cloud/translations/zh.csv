@@ -10,7 +10,7 @@ DocType: Region,All,所有
 apps/cloud/cloud/templates/pages/cloud_company_group.py +37,Back,后退
 apps/cloud/cloud/cloud/doctype/cloud_company_group/cloud_company_group.py +27,"Cannot add user into group, as {0} is not employee for your company","不能添加用户{0}到组，此用户并非您公司的员工"
 DocType: Region,City,城市
-DocType: Cloud Company,Cloud,
+DocType: Cloud Company,Cloud,云
 apps/cloud/cloud/templates/pages/cloud_employee.html +3,Cloud Account - ,Cloud 账户 -
 apps/cloud/cloud/hooks.py +54,Cloud Companies,Cloud 公司列表
 DocType: Cloud Company,Cloud Company,Cloud 公司
