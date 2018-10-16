@@ -8,6 +8,7 @@ DocType: Cloud Company,Admin,管理员
 apps/cloud/cloud/templates/pages/cloud_company.html +44,Administrator,超级管理员
 DocType: Region,All,所有
 apps/cloud/cloud/templates/pages/cloud_company_group.py +37,Back,后退
+apps/cloud/cloud/cloud/doctype/cloud_company_group/cloud_company_group.py +27,"Cannot add user into group, as {0} is not employee for your company","不能添加用户{0}到组，此用户并非您公司的员工"
 DocType: Region,City,城市
 DocType: Cloud Company,Cloud,
 apps/cloud/cloud/templates/pages/cloud_employee.html +3,Cloud Account - ,Cloud 账户 -
@@ -39,14 +40,14 @@ DocType: Cloud Settings,Default Wechat App,默认微信公共帐号
 apps/cloud/cloud/templates/pages/cloud_employee.html +31,Delete User From,删除用户
 DocType: Cloud Company Group,Description,描述
 DocType: Cloud Company,Domain,域名
-apps/cloud/cloud/cloud/doctype/region/region.py +18,Duplicated Region Name Found,重复的行政区名称
-apps/cloud/cloud/cloud/doctype/cloud_company_group/cloud_company_group.py +17,Duplicated user found! {0},
+apps/cloud/cloud/cloud/doctype/region/region.py +20,Duplicated Region Name Found,重复的行政区名称
+apps/cloud/cloud/cloud/doctype/cloud_company_group/cloud_company_group.py +17,Duplicated user found! {0},重复添加用户 {0} !
 apps/cloud/cloud/templates/pages/cloud_company_group.html +24,Edit,编辑
 apps/cloud/cloud/templates/pages/cloud_company.html +27,Edit Employee Groups,编辑员工组
 apps/cloud/cloud/templates/pages/cloud_employee.html +25,Edit IOT Profile,编辑 IOT 信息
 apps/cloud/cloud/templates/pages/cloud_add_user.html +60,Email,邮件
-apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +43,Employee has been deleted,员工删除成功
-apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +33,Employee has ben added,员工增加成功
+apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +48,Employee has been deleted,员工删除成功
+apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +38,Employee has ben added,员工增加成功
 DocType: Cloud Company,Enabled,启用
 DocType: Cloud Company,Full Company Name,公司全称
 DocType: Cloud Project,Group,组
@@ -77,7 +78,7 @@ DocType: Region,Region,区域
 DocType: Region Address,Region Address,行政区地址
 DocType: Region,Region Name,行政区名称
 DocType: Region,Region Parent,行政区从属
-apps/cloud/cloud/cloud/doctype/region/region.py +14,Region Parent is required!,
+apps/cloud/cloud/cloud/doctype/region/region.py +14,Region Parent is required!,没有指定父区域!
 apps/cloud/cloud/templates/pages/cloud_employee.html +22,Reset Password,重置密码
 DocType: Cloud Company GroupUser,Role,角色
 DocType: Cloud Settings,Role List,角色列表
@@ -92,14 +93,14 @@ DocType: Region,Type,类型
 DocType: Cloud Company GroupUser,User,用户
 DocType: Cloud Company Group,User List,用户列表
 apps/cloud/cloud/templates/pages/cloud_add_user.js +25,User has been added,员工增加成功
-apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +19,User in in another company {0},该用户是{0}公司的员工
+apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +24,User in in another company {0},该用户是{0}公司的员工
 apps/cloud/cloud/templates/pages/cloud_employee.html +39,Username,用户名
 apps/cloud/cloud/templates/pages/cloud_company_group.html +53,Users,用户列表
 DocType: Cloud Permission,Value,值
 DocType: Cloud Company,Wechat,微信
 DocType: Cloud Company,Wechat App,微信公共号
 apps/cloud/cloud/templates/pages/cloud_add_user.py +40,You need specified Cloud Enterprise,需要指定Cloud公司
-apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +23,You not the admin of company {0},您不是{0}公司的管理员
+apps/cloud/cloud/cloud/doctype/cloud_employee/cloud_employee.py +28,You not the admin of company {0},您不是{0}公司的管理员
 apps/cloud/cloud/cloud/doctype/cloud_company/cloud_company.py +53,Your Companies,您的公司列表
 apps/cloud/cloud/cloud/doctype/cloud_project_site/cloud_project_site.py +36,Your Project Sites,您的项目现场列表
 apps/cloud/cloud/cloud/doctype/cloud_project/cloud_project.py +36,Your Projects,您的项目列表
