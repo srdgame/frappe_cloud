@@ -133,7 +133,8 @@ has_permission = {
 
 doc_events = {
 	"User": {
-		"after_insert": "cloud.controllers.user_hooks.after_insert",
+#		"after_insert": "cloud.controllers.user_hooks.after_insert",
+		"before_insert": "cloud.controllers.user_hooks.before_insert",
 	},
 }
 

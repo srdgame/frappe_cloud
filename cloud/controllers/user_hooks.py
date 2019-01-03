@@ -6,11 +6,20 @@ from __future__ import unicode_literals
 import frappe
 import time
 
-
+'''
 def after_insert(doc, method):
 	frappe.enqueue('cloud.controllers.user_hooks.insert_user_roles', user=doc.name, sleep=3)
+'''
 
 
+def before_insert(doc, method):
+	cloud_settings = frappe.get_doc('Cloud Settings', 'Cloud Settings')
+	if len(cloud_settings.role_list) > 0:
+		roles = [d.role for d in cloud_settings.role_list]
+		doc.append_roles(*roles)
+
+
+'''
 def insert_user_roles(user, sleep=None):
 	if sleep:
 		time.sleep(sleep)
@@ -20,4 +29,4 @@ def insert_user_roles(user, sleep=None):
 		roles = [d.role for d in cloud_settings.role_list]
 		doc.append_roles(*roles)
 		doc.save(ignore_permissions=True)
-
+'''
