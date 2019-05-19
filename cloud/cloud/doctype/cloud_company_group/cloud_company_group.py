@@ -81,6 +81,12 @@ def list_user_groups(user, check_enable=True):
 	return groups
 
 
+def is_user_in_group(group, user):
+	if frappe.get_value("Cloud Company GroupUser", {"user": user, "parent": group}, "name"):
+		return True
+	return False
+
+
 def list_users(group, check_enable=True):
 	users = []
 	for d in frappe.db.get_values("Cloud Company GroupUser", {"parent": group}, ["user", "role", "modified", "creation"]):
