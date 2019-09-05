@@ -10,8 +10,10 @@
   "credit_code",
   "domain",
   "admin",
-  "business_licence",
   "telephone",
+  "contact",
+  "address",
+  "business_licence",
   "personal_license",
   "amended_from"
  ],
@@ -76,10 +78,22 @@
    "fieldtype": "Data",
    "label": "Uniform social credit code",
    "reqd": 1
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address",
+   "reqd": 1
   }
  ],
  "is_submittable": 1,
- "modified": "2019-09-05 13:45:18.135594",
+ "modified": "2019-09-05 15:11:23.891757",
  "modified_by": "Administrator",
  "module": "Cloud",
  "name": "Cloud Company Requisition",

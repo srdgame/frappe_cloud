@@ -53,7 +53,7 @@ class CloudCompanyRequisition(Document):
 			"domain": self.domain,
 			"admin": self.admin,
 			"address": self.address,
-			"contact": self.telephone,
+			"contact": self.contact,
 			"enabled": 1,
 			"wechat": 0
 		}
