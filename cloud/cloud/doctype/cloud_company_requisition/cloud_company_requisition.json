@@ -1,0 +1,135 @@
+{
+ "autoname": "format:CCR-{YY}-{MM}-{DD}-{####}",
+ "creation": "2019-09-04 13:12:25.183439",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "comp_name",
+  "full_name",
+  "credit_code",
+  "domain",
+  "admin",
+  "business_licence",
+  "telephone",
+  "personal_license",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "comp_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "domain",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Domain",
+   "options": "Domain",
+   "reqd": 1
+  },
+  {
+   "fieldname": "admin",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Admin User",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "business_licence",
+   "fieldtype": "Attach Image",
+   "label": "Business Licence"
+  },
+  {
+   "fieldname": "telephone",
+   "fieldtype": "Data",
+   "label": "Telephone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "personal_license",
+   "fieldtype": "Attach Image",
+   "label": "Personal License"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cloud Company Requisition",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "credit_code",
+   "fieldtype": "Data",
+   "label": "Uniform social credit code",
+   "reqd": 1
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2019-09-05 13:45:18.135594",
+ "modified_by": "Administrator",
+ "module": "Cloud",
+ "name": "Cloud Company Requisition",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cloud Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
