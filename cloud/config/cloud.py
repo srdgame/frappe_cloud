@@ -16,6 +16,12 @@ def get_data():
 				},
 				{
 					"type": "doctype",
+					"name": "Cloud Company Requisition",
+					"onboard": 1,
+					"description": _("Cloud Company"),
+				},
+				{
+					"type": "doctype",
 					"name": "Cloud Company Group",
 					"onboard": 1,
 					"description": _("Cloud Company Group"),
