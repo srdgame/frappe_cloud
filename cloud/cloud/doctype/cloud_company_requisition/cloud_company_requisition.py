@@ -11,13 +11,13 @@ from frappe.model.document import Document
 class CloudCompanyRequisition(Document):
 	def validate(self):
 		if self.docstatus == 0:
-			if frappe.db.exits("Cloud Company", {"comp_name": self.comp_name, "name": ('!=', self.name)}):
+			if frappe.db.exists("Cloud Company", {"comp_name": self.comp_name, "name": ('!=', self.name)}):
 				throw("company_duplicated_comp_name")
 
-			if frappe.db.exits("Cloud Company", {"full_name": self.full_name, "name": ('!=', self.name)}):
+			if frappe.db.exists("Cloud Company", {"full_name": self.full_name, "name": ('!=', self.name)}):
 				throw("company_duplicated_full_name")
 
-			if frappe.db.exits("Cloud Company", {"domain": self.domain, "name": ('!=', self.name)}):
+			if frappe.db.exists("Cloud Company", {"domain": self.domain, "name": ('!=', self.name)}):
 				throw("company_duplicated_domain")
 
 		'''
