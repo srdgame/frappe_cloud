@@ -85,16 +85,5 @@ def get_data():
 					"description": _("Region Address"),
 				}
 			]
-		},
-		{
-			"label": _("IOT Portal"),
-			"items": [
-				{
-					"type": "doctype",
-					"name": "IOT Homepage",
-					"onboard": 1,
-					"description": _("Settings for IOT Cloud homepage"),
-				}
-			]
 		}
 	]
