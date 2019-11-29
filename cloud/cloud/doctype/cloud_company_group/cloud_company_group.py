@@ -82,6 +82,11 @@ def list_user_groups(user, check_enable=True):
 
 
 def is_user_in_group(group, user):
+	if 'Company Admin' in frappe.get_roles(user):
+		company = frappe.get_value("Cloud Company Group", group, "company")
+		if company in list_admin_companies():
+			return True
+
 	if frappe.get_value("Cloud Company GroupUser", {"user": user, "parent": group}, "name"):
 		return True
 	return False
