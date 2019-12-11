@@ -31,6 +31,12 @@ def get_data():
 					"name": "Cloud Employee",
 					"onboard": 1,
 					"description": _("Cloud Employee"),
+				},
+				{
+					"type": "doctype",
+					"name": "Cloud Employee Invitation",
+					"onboard": 1,
+					"description": _("Cloud Employee Invitation"),
 				}
 			]
 		},

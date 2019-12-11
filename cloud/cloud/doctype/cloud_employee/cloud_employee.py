@@ -8,7 +8,11 @@ from frappe import throw, _
 from frappe.model.document import Document
 
 class CloudEmployee(Document):
-	pass
+	def on_trash(self):
+		# Delete employee from all groups
+		for d in frappe.db.get_values("Cloud Company GroupUser", {"user": self.user}, "name"):
+			frappe.delete_doc("Cloud Company GroupUser", d[0])
+		# TODO: Release all applications templates to company admin before employee quited
 
 
 def on_doctype_update():
