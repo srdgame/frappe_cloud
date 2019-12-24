@@ -15,6 +15,10 @@ class CloudEmployeeInvitation(Document):
 			"user": self.user
 		}
 		frappe.get_doc(data).insert(ignore_permissions=True)
+		rg = frappe.get_value("Cloud Company Group", {"company": self.company, "group_name": "root"})
+		if rg:
+			group_doc = frappe.get_doc("Cloud Company Group", rg)
+			group_doc.add_users("user", self.user)
 
 
 def get_permission_query_conditions(user):
