@@ -13,7 +13,7 @@
   "telephone",
   "contact",
   "address",
-  "business_licence",
+  "business_license",
   "personal_license",
   "amended_from"
  ],
@@ -47,11 +47,6 @@
    "label": "Admin User",
    "options": "User",
    "reqd": 1
-  },
-  {
-   "fieldname": "business_licence",
-   "fieldtype": "Attach Image",
-   "label": "Business Licence"
   },
   {
    "fieldname": "telephone",
@@ -90,10 +85,15 @@
    "fieldtype": "Data",
    "label": "Address",
    "reqd": 1
+  },
+  {
+   "fieldname": "business_license",
+   "fieldtype": "Attach Image",
+   "label": "Business License"
   }
  ],
  "is_submittable": 1,
- "modified": "2019-09-05 15:11:23.891757",
+ "modified": "2019-12-27 17:54:02.114616",
  "modified_by": "Administrator",
  "module": "Cloud",
  "name": "Cloud Company Requisition",
