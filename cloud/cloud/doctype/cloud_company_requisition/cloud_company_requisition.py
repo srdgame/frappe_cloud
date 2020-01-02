@@ -57,5 +57,11 @@ class CloudCompanyRequisition(Document):
 			"enabled": 1,
 			"wechat": 0
 		}
+		doc = frappe.get_doc(data).insert()
+		group_data = {
+			"doctype": "Cloud Company Group",
+			"company": doc.name,
+			"group_name": "root"
+		}
 		frappe.get_doc(data).insert()
 
