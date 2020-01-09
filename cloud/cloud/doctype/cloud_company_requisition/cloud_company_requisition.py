@@ -63,5 +63,5 @@ class CloudCompanyRequisition(Document):
 			"company": doc.name,
 			"group_name": "root"
 		}
-		frappe.get_doc(data).insert()
+		frappe.get_doc(group_data).insert()
 
