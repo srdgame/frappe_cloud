@@ -1,0 +1,14 @@
+[
+  {
+      "perm_name": "Admin",
+      "value": "admin"
+  },
+  {
+      "perm_name": "User",
+      "value": "user"
+  },
+  {
+      "perm_name": "Developer",
+      "value": "dev"
+  }
+]

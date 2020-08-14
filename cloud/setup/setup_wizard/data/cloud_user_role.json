@@ -1,0 +1,18 @@
+[
+    {
+        "role_name": "Developer",
+        "perm_list": [
+            {
+                "perm": "dev"
+            }
+        ]
+    },
+    {
+        "role_name": "Admin",
+        "perm_list": [
+            {
+                "perm": "admin"
+            }
+        ]
+    }
+]
