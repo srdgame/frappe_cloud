@@ -40,6 +40,7 @@ def get_setup_stages(args=None):
 
 
 def setup_company(args):
+	frappe.logger(__name__).error("Cloud Setup Wizard setup_company Args:{0}".format(json.dumps(args)))
 	records = [
 		# Cloud Company
 		{
@@ -61,6 +62,7 @@ def setup_company(args):
 
 
 def setup_defaults(args):
+	frappe.logger(__name__).error("Cloud Setup Wizard setup_defaults Args:{0}".format(json.dumps(args)))
 	perms = json.loads(
 		open(frappe.get_app_path("cloud", "setup", "setup_wizard", "data", "cloud_permission.json")).read())
 	for d in perms:
