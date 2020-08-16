@@ -55,6 +55,14 @@ def setup_company(args):
 			"doctype": "Cloud Employee",
 			'company': args.company_name,
 			'user': args.get("email") or 'dirk@kooiot.com'
+		},
+
+		# Company Company Group
+		{
+			"doctype": "Cloud Company Group",
+			'company': args.company_name,
+			'group_name': 'root',
+			'enabled': 1
 		}
 	]
 	make_records(records)
@@ -76,6 +84,12 @@ def setup_defaults(args):
 			"doctype": "Cloud User Role"
 		})
 		frappe.get_doc(d).insert(ignore_permissions=True)
+
+	settings = frappe.get_doc("Cloud Settings")
+	settings.set("default_cloud_company", args.company_name)
+	settings.append("role_list", {"role": "IOT User"})
+	settings.append("role_list", {"role": "App User"})
+	settings.save()
 
 
 # Only for programmatical use
